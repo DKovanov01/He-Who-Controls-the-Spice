@@ -1,0 +1,30 @@
+﻿l_english:
+ artifact_zroni_research:0 "Secrets of the  Zroni"
+ artifact_zroni_research_desc:0 "Delve deeper into the secrets of the  Zroni."
+ artifact_zroni_research_completed:0 "$artifact_zroni_research$"
+ artifact_zroni_research_completed_desc:0 "We have put the ancient knowledge of the  Zroni to our own use."
+ ZRONI_SECRETS:0 "Delve into the Secrets of the  Zroni"
+ ZRONI_SECRETS_DESC:0 "Our scientists will carefully sift through all of the data we have collected, seeking to add the knowledge of the  Zroni to our own."
+ ancrel.10350:0 "$artifact_zroni_research$"
+ ancrel.10350.name:0 "$artifact_zroni_research$"
+ ancrel.10350.desc:0 "We have successfully managed to integrate the  Zroni artifacts into our research process. Their insights into psionic study will greatly aid our own."
+ Zroni_artifact_research_unlocked:0 "Minor Artifact Action Unlocked: §Y$artifact_zroni_research$§!"
+
+ relic_zro_crystal_passive:0 "The cooldown to §YBreach into the Shroud§! is reduced by §G50%§!."
+ relic_zro_crystal_active:0 "Contact the spirit of §Y$relic_zro_entity_name$§! to seek guidance in different matters."
+ 
+ r_zro_crystal:2 "Psionic Archive"
+ r_zro_crystal_desc:1 "A  Spice psionic crystal archive, containing the essence of §Y$relic_zro_entity_name$§!. From time to time it can be consulted for guidance."
+
+ ancrel.7006.name:0 "Psionic Guidance"
+ ancrel.7006.1.desc:1 "As we touch the Soulstone, we are projected in to a microcosm of the Shroud. We become aware that we are not alone in this swirling twilight realm. There is an entity awaiting us, one immeasurably ancient. A keeper of secrets. $relic_zro_entity_name$, we instinctively know.\n\nHaving passed the test of making contact with it, the entity awaits our questions."
+ ancrel.7006.2.desc:1 "The Soulstone, pulsing with inner light, seems to wordlessly beckon. We touch it, and our minds are drawn in to a pocket dimension of the Shroud, where the enigmatic entity called $relic_zro_entity_name$ awaits.\n\nIt knows things no mortal being could know, and seems willing to share its secrets now that we have reached its sanctum."
+ ancrel.7006.3.desc:1 "Something awaits us inside the Soulstone. $relic_zro_entity_name$. It's been waiting for us since before we were alive.\n\nTouching the stone ushers us in to the intangible place where it dwells. Alone for ages with only its own thoughts for company, the entity seems eager to answer our questions using all its arcane wisdom, although whether it does this to help, or for mere sport, is a mystery."
+ ancrel.7006.a:0 "Ask $relic_zro_entity_name$ to share an insight"
+ ancrel.7006.b:0 "Ask $relic_zro_entity_name$ about matters martial"
+ ancrel.7006.c:0 "Ask $relic_zro_entity_name$ about matters of state"
+ ancrel.7007.name:0 "$r_galaxy$"
+ ancrel.7007.desc:1 "Time flows faster inside the miniature galaxy, and by carefully observing its denizens we are able to learn much when comes to advanced technologies."
+
+ d_hab_zro_1:0 "Spice Deposit"
+ d_hab_zro_1_desc:0 "This habitat is built near an exploitable Spice deposit."

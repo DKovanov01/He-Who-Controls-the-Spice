@@ -1,0 +1,82 @@
+@activation_cost = 3000
+@triumph_duration = 3600
+@triumph_duration_short = 1800
+@triumph_duration_veryshort = 900
+
+r_great_sandworm = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_great_sandworm"
+	sound = "relic_activation_the_last_baol"
+	title = "r_great_sandworm"
+	desc = "r_great_sandworm_desc"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = @activation_cost
+			sr_zro = 250
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 10
+			owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 100000
+				}
+			}
+		}
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
+		modifier = {
+			country_sr_zro_produces_mult = 0.25
+			country_society_research_produces_mult = 0.25
+		}
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_machine_empire = yes
+			is_hive_empire = yes
+		}
+		modifier = {
+			country_society_research_produces_mult = 0.20
+		}
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = relic_great_sandworm_active_tooltip
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = relic_great_sandworm_activated }
+				}
+				set_timed_country_flag = { flag = relic_great_sandworm_activated days = @triumph_duration }
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+}

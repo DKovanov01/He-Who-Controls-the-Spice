@@ -1,0 +1,291 @@
+holding_ducal_castle = {
+	base_buildtime = @b1_time
+	owner_type = subject_holding
+	icon = holding_overlord_garrison
+	base_cap_amount = 1
+
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	
+	potential = {
+		OR = { 
+			has_deposit = d_zro_worm_home
+		    has_deposit = d_zro_great_sandworm
+			}
+	}
+	
+	allow = {
+	    custom_tooltip = {
+			fail_text = overlord_is_not_egalitarian
+			exists = owner.overlord
+			owner.overlord = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_crime_add = -15
+		monthly_loyalty = 0.5
+		job_noble_add = 1
+		job_overlord_zro_harvester_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			overlord_has_num_armies_on_planet = { NUM = 1 }
+		}
+		modifier = {
+			planet_crime_add = -20
+			pop_happiness = 0.1
+			monthly_loyalty = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			overlord_has_num_armies_on_planet = { NUM = 2 }
+		}
+		modifier = {
+			planet_crime_add = -25
+			pop_happiness = 0.15
+			monthly_loyalty = 1.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			overlord_has_more_than_num_armies_on_planet = { NUM = 2 }
+		}
+		modifier = {
+			planet_crime_add = -30
+			pop_happiness = 0.20
+			monthly_loyalty = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 1500
+		}
+
+	triggered_desc = {
+		text = holding_ducal_castle_armies_desc
+	}
+}
+
+holding_barons_palace = {
+	base_buildtime = @b1_time
+	owner_type = subject_holding
+	icon = holding_overlord_garrison
+	base_cap_amount = 1
+
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	
+	potential = {
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+	
+	allow = {
+	    custom_tooltip = {
+		    fail_text = overlord_is_not_authoritarian
+			exists = owner.overlord
+			owner.overlord = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+	    job_overlord_zro_harvester_add = 1
+		planet_crime_add = -20
+		monthly_loyalty = -0.5
+		pop_happiness = -0.10
+		job_noble_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			overlord_has_num_armies_on_planet = { NUM = 1 }
+		}
+		modifier = {
+		    job_overlord_zro_harvester_add = 2
+			planet_crime_add = -30
+			pop_happiness = -0.20
+			monthly_loyalty = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			overlord_has_num_armies_on_planet = { NUM = 2 }
+		}
+		modifier = {
+		    job_overlord_zro_harvester_add = 3
+			planet_crime_add = -40
+			pop_happiness = -0.30
+			monthly_loyalty = -1.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			overlord_has_more_than_num_armies_on_planet = { NUM = 2 }
+		}
+		modifier = {
+			planet_crime_add = -50
+			pop_happiness = -0.40
+			monthly_loyalty = -2
+		}
+	}
+	
+	ai_weight = {
+		weight = 1500
+		}
+
+	triggered_desc = {
+		text = holding_barons_palace_armies_desc
+	}
+}
+
+holding_allied_sietch = {
+	base_buildtime = @b1_time
+	owner_type = subject_holding
+	icon = building_primitive_dwellings
+	base_cap_amount = 1
+
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	potential = {
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+	
+	allow = {
+		 custom_tooltip = {
+		    fail_text = overlord_is_not_xenophile
+			exists = owner.overlord
+			owner.overlord = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_amenities_add = 10
+		job_sandtrout_caretaker_add = 1
+		job_overlord_zro_harvester_add = 2
+		monthly_loyalty = 0.7
+	}
+	
+	ai_weight = {
+		weight = 1500
+		}
+
+}
+
+holding_zro_requisitorium = {
+	base_buildtime = @b2_time
+	owner_type = subject_holding
+	icon = holding_energy_requisitorium
+	base_cap_amount = 1
+
+	potential = {
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = ove_requires_tech_power_hub_2
+			owner.overlord = {
+				has_technology  = tech_power_hub_2
+			}
+		}
+		custom_tooltip = {
+			fail_text = overlord_is_not_xenophobe
+			exists = owner.overlord
+			owner.overlord = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+			alloys = 1
+		}
+	}
+
+	planet_modifier = {
+		monthly_loyalty = -1.5
+	}
+
+	on_built = {
+		planet = {
+			set_planet_flag = has_zro_requisitorium
+		}
+	}
+
+	on_destroy = {
+		planet = {
+			remove_planet_flag = has_zro_requisitorium
+		}
+	}
+	
+	ai_weight = {
+		weight = 1500
+		}
+	
+	triggered_desc = {
+		text = job_zro_requisitioned_effect_desc
+	}
+
+}

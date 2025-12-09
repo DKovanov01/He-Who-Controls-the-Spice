@@ -1,0 +1,244 @@
+namespace = zro_worm
+
+ #Initial setup
+country_event = {
+	id = zro_worm.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_zro_worm
+	}
+
+	immediate = {
+	    country_event = { id = zro_worm.2 }
+		give_technology = { tech = tech_zro message = no }
+		give_technology = { tech = tech_mine_zro message = no }
+		give_technology = { tech = tech_psionic_theory message = no }
+		give_technology = { tech = tech_building_zro_dispensery message = no }
+		give_technology = { tech = tech_building_zro_harvester_depot message = no }
+		give_technology = { tech = tech_fedaykin_army message = no }
+		add_relic = r_great_sandworm
+		add_resource = { sr_zro = 200 }
+
+		capital_scope = {
+		clear_deposits = yes
+		clear_blockers = yes
+		add_deposit = d_zro_worm_home
+		add_building = building_zro_dispensery
+
+		# Food
+		add_deposit = d_marvelous_oasis
+		add_deposit = d_fungal_caves
+
+		# Minerals
+		add_deposit = d_rich_mountain
+		add_deposit = d_rich_mountain
+		add_deposit = d_prosperous_mesa
+
+		# Energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_arid_highlands
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_searing_desert
+		add_deposit = d_searing_desert
+		add_deposit = d_searing_desert
+		add_deposit = d_searing_desert
+
+		# Bonus
+		random_list = {
+			50 = { add_deposit = d_prosperous_mesa }
+			50 = { add_deposit = d_fungal_caves }
+		}
+		}
+
+		#if = {
+		#limit = { is_ai = yes }
+		#capital_scope = {
+		#add_modifier = { modifier = "planet_luxuries_boost_zro" days = 3600 }
+		#}
+		#else = {
+		#add_resource = { sr_zro = 100 }
+		#}
+		#}
+		# WIP - prob. more things to come here
+	}
+}
+
+# Change starting colonisables into terraforming candidate Barrens worlds
+country_event = {
+	id = zro_worm.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_zro_worm
+	}
+
+	immediate = {
+		capital_scope.solar_system = {
+			closest_system = {
+				limit = { has_star_flag = neighbor_t1_first_colony }
+				max_steps = 3
+				random_system_planet = {
+					limit = {
+						is_colonizable = yes
+						is_colony = no
+						has_planet_flag = prescripted_ideal
+					}
+					change_pc = pc_barren
+				}
+				random_system_planet = {
+					limit = {
+						is_asteroid = yes
+					}
+					change_pc = pc_asteroid
+				}
+			}
+			closest_system = {
+				limit = { has_star_flag = neighbor_t2_second_colony }
+				max_steps = 6
+				random_system_planet = {
+					limit = {
+						is_colonizable = yes
+						is_colony = no
+						has_planet_flag = prescripted_ideal
+					}
+					change_pc = pc_barren
+				}
+				random_system_planet = {
+					limit = {
+						is_asteroid = yes
+					}
+					change_pc = pc_asteroid
+				}
+			}
+		}
+	}
+}
+####
+
+
+planet_event = {
+	id = zro_worm.3
+#	title = "zro_worm.3.name"
+#	desc = "zro_worm.3.desc"
+#	picture = GFX_evt_cold_barren
+#	show_sound = event_scanner
+	is_triggered_only = yes
+	location = from
+	hide_window = yes
+
+	#pre_triggers = { 
+	#	has_owner = no
+	#}
+
+	#trigger = {
+	#	has_planet_flag = zro_worm_terraforming_flag
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+
+	immediate = {
+	remove_planet_flag = zro_worm_terraforming_flag
+	remove_modifier = planet_zro_worm_terraforming
+	#owner = { country_event = { id = zro_worm.4 days = -1 } }
+	if = {
+	 		limit = {
+	 		NOT = { is_planet_class = pc_desert }
+	 		}
+	change_pc = pc_desert
+	reset_planet = yes
+	fire_on_action = { on_action = on_terraforming_complete }
+	}
+	add_deposit = d_zro_worm_colony
+	}
+}
+
+country_event = {
+	id = zro_worm.4
+	title = "zro_worm.3.name"
+	desc = "zro_worm.3.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_scanner
+	is_triggered_only = yes
+	location = from
+
+	option = {
+		name = REMARKABLE
+		}
+}
+
+planet_event = {
+	id = zro_worm.5
+#	title = "zro_worm.5.name"
+#	desc = "zro_worm.5.desc"
+#	picture = GFX_evt_cold_barren
+#	show_sound = event_scanner
+	is_triggered_only = yes
+	location = from
+	hide_window = yes
+
+	#pre_triggers = { 
+	#	has_owner = no
+	#}
+
+	#trigger = {
+	#	has_planet_flag = zro_worm_terraforming_flag
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+
+	immediate = {
+	remove_planet_flag = zro_great_sandworm_terraforming_flag
+	remove_modifier = planet_great_sandworm_terraforming
+	#owner = { country_event = { id = zro_worm.6 days = -1 } }
+	if = {
+	 		limit = {
+	 		NOT = { is_planet_class = pc_desert }
+	 		}
+	change_pc = pc_desert
+	reset_planet = yes
+	fire_on_action = { on_action = on_terraforming_complete }
+	}
+	add_deposit = d_zro_great_sandworm
+	}
+}
+
+country_event = {
+	id = zro_worm.6
+	title = "zro_worm.6.name"
+	desc = "zro_worm.6.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_scanner
+	is_triggered_only = yes
+	location = from
+
+	option = {
+		name = REMARKABLE
+		}
+}
+
+################ DUH
+country_event = {	
+	id = zro_worm_arrakis_spawner.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {	
+		random_system = {
+			spawn_system = {
+				min_distance >= 10
+				max_distance <= 500
+				initializer = "zro_worm_extra"
+				hyperlane = yes
+				is_discovered = yes
+			}
+		}
+	}
+}

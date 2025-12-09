@@ -1,0 +1,39 @@
+spriteTypes = {
+
+
+	spriteType = {
+		name = "GFX_origin_zro_worm"
+		texturefile = "gfx/event_pictures/origins/origin_zro_worm.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+		spriteType = {
+		name = "GFX_great_sandworm"
+		texturefile = "gfx/interface/icons/relics/relics_great_sandworm.jpeg"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_great_sandworm"
+		texturefile = "gfx/interface/icons/relics/relics_great_sandworm.png"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "zro_harvester"
+		texturefile = "gfx/interface/icons/jobs/job_zro_harvester.jpeg"
+		alwaystransparent = yes
+	}
+	
+	spriteType = {
+	    name = "GFX_ship_part_zro_navigator_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_zro_navigator_1.dds"
+	}
+	spriteType = {
+	    name = "GFX_ship_part_zro_navigator_2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_zro_navigator_2.dds"
+	}
+	spriteType = {
+	    name = "GFX_ship_part_zro_navigator_3"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_zro_navigator_3.dds"
+	}
+	
+}

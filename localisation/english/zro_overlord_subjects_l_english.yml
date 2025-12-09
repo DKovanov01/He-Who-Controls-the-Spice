@@ -1,0 +1,51 @@
+﻿l_english:
+ 
+ r_zro:0 "£sr_zro£ §Y$sr_zro$§!"
+
+ specialist.1150.g:0 "§YZro§! is too dangerous to be left alone."
+ specialist.1150.g.tt:0 "Finishing the special project will create a deposit of £sr_zro£ §Y1 Spice§! and a cache of §Y25-75 Spice§!."
+
+ specialist.1260.title:0 "Spice Remains"
+ specialist.1260.desc:0 "[prospectorium_discovery_target.ResourceDiscovery]\n\n[prospectorium_discovery_target.ResourceDiscoveryZro]"
+
+ # Second Half - Spice
+ ResourceDiscoveryZro1:0 "As we continued to follow it, we found a source of Spice buried deep below the surface. Exotic harvesting tools littered the chamber floor, and with a little ingenuity we should be able to make use of them ourselves."
+ ResourceDiscoveryZro2:0 "It is connected to a defunct facility hidden in the depths below. The facility itself appears intended to survey a Spice impact site. Though empty and largely offline, it should eventually be possible to reuse it for our own purposes."
+
+ PROSPECTORIUM_RESOURCE_DISCOVERY_ZRO:0 "Resource Discovery - Spice"
+ PROSPECTORIUM_RESOURCE_DISCOVERY_ZRO_DESC:0 "$prospectorium_resource_discovery_desc$"
+
+ prospectorium_3_mining_tech_desc:0 "§EAdd to Researchable Technologies:§!\n$t$£society£ $tech_mine_zro$\n$t$£physics£ $tech_mine_dark_matter$\n$t$£engineering£ $tech_mine_living_metal$"
+ prospectorium_3_deposits_desc:1 "§EResource Discovery can now give one of the following resources:§!\n$t$$r_zro$\n$t$$r_dark_matter$\n$t$$r_living_metal$"
+ 
+ holding_ducal_castle: "Duke's Keep"
+ holding_ducal_castle_desc: "Allowing an honorable Duke to oversee this fief will improve our relations with the local population."
+ holding_ducal_castle_armies_desc: "Every Overlord army on this planet gives an additional §G-5%§! [Root.CrimeOrDeviancy], §G+0.5§! $r_loyalty$ and §G+5%§! Happiness, to a maximum of §G-30%§! [Root.CrimeOrDeviancy], (an additional) §G+2§! $r_loyalty$ and §G+20%§! Happiness."
+
+ holding_barons_palace: "Baron's Stronghold"
+ holding_barons_palace_desc: "A despotic Baron ruling this world with an iron fist will surely put the locals in their place..."
+ holding_barons_palace_armies_desc: "Every Overlord army on this planet gives an additional §G-10%§! [Root.CrimeOrDeviancy], §R-0.5§! $r_loyalty$, §R-10%§! Happiness and §G+1§! §YOverlord's Spice Harvester§!, to a maximum of §G-50%§! [Root.CrimeOrDeviancy], (an additional) §R-2§! $r_loyalty$, §R-40%§! Happiness and §G3§! §YHarvesters§!."
+
+ holding_allied_sietch: "Allied Sietch"
+ holding_allied_sietch_desc: "Building an alliance with a local Sietch will win us local people's support, and grant us access to their resources. An allied sietch is an allied Arrakis."
+
+ holding_zro_requisitorium: "Ministry of Spice Production"
+ holding_zro_requisitorium_desc: "If the rulers of this planet won't give us our fair share of Spice, locals should be made to do so instead. My spice, my Arrakis... my Dune.""
+  
+ job_zro_requisitioned_effect_desc: "£job_underscore_zro_harvester£ Harvesters produce §R-1§! $sr_zro$ for the Subject and §G1§! $sr_zro$ for the Overlord."
+
+ overlord_is_egalitarian:0 "$TRIGGER_FAIL$§ROur empire embraces $ethic_egalitarian$ ideals.§!"
+ overlord_is_authoritarian:0 "$TRIGGER_FAIL$§ROur empire embraces $ethic_authoritarian$ ideals.§!"
+ overlord_is_xenophile:0 "$TRIGGER_FAIL$§ROur empire embraces $ethic_xenophile$ ideals.§!"
+ 
+ overlord_is_not_xenophobe:0 "$TRIGGER_FAIL$§ROur empire does not embrace $ethic_xenophobe$ ideals.§!"
+ overlord_is_not_egalitarian:0 "$TRIGGER_FAIL$§ROur empire does not embrace $ethic_egalitarian$ ideals.§!"
+ overlord_is_not_authoritarian:0 "$TRIGGER_FAIL$§ROur empire does not embrace $ethic_authoritarian$ ideals.§!"
+ overlord_is_not_xenophile:0 "$TRIGGER_FAIL$§ROur empire does not embrace $ethic_xenophile$ ideals.§!"
+ 
+ 
+ 
+ 
+ 
+ 
+ 

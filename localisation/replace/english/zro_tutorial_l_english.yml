@@ -1,0 +1,8 @@
+﻿l_english:
+
+ tutorial.2105.abbr.desc:0 "We have encountered a §SSpacing GuildEnclave§!. These independent military and interstellar travel specialists may loan out §SSpacing Guild Fleets§! to empires including our own - for a fee."
+ tutorial.2105.full.desc:0 "$tutorial.2105.abbr.desc$\n\nIf we choose to hire a Spacing Guild Fleet, we will retain control of it for a set period of time. During that time, the Enclave will attempt to reinforce the fleet when necessary, however neither a Spacing Guild Fleet nor its Admiral may be integrated with our own fleets."
+ tutorial.2111.name:0 "Tutorial: Spacing Guild Enclave"
+ tutorial.2111.abbr.desc:0 "§Y[tutorial_mercenary_fleet.GetName]§! is now capable of becoming a §SSpacing Guild Enclave§!, if we so wish. The fleet would cease to be under our direct control - instead it would become an independent force, capable of loaning out §SSpacing Guild Fleets§! to empires including our own."
+ tutorial.2111.full.desc:0 "$tutorial.2111.abbr.desc$\n\nFor as long as we share space with the Spacing Guild Enclave, we stand to earn §Sincome§! whenever it loans its Spacing Guild Fleet out to other empires. If we choose to hire the Spacing Guild Fleet ourselves, we will retain control of that fleet for a set period of time. Empires may pay extra to buy out an existing contract if the Spacing Guild Fleet is not currently available."
+

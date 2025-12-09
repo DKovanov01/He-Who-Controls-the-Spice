@@ -1,0 +1,123 @@
+﻿l_english:
+
+ civic_mercenary_enclave:0 "Spacing Guild Enclave"
+ civic_mercenary_enclave_desc:0 ""
+
+ gov_mercenary_enclave:0 "Spacing Guild Enclave"
+ gov_mercenary_enclave_desc:1 "A proud and lethal interstellar travel company, renting out fleets and soldiers for hire."
+ 
+ RT_HIGH_ADMIRAL:0 "Guild Representitive"
+
+ # Spacing Guild Enclaves
+ enclave.2.name:0 "Spacing Guild Enclave Foundation"
+ enclave.2.desc:2 "We are debating whether or not to help set up the [fleet.GetName] as an independent §YSpacing Guild Enclave§!. The proposal, first put forward by the fleet commanders, would result in us losing control of the fleet. We would also be responsible for providing them with a sizeable investment in §YEnergy Credits§! and §YAlloys§!. In return, they would give us a number of shares in the company. These would come with periodic dividends and special privileges.\n\nThey assure us that in times of need, they will always be ready to fight for us. And our money."
+
+ enclave.2.tooltip.d:0 "No free Spacing Guild capacity"
+ enclave.2.tooltip.dd:0 "Spacing Guild capacity available"
+
+ enclave.2.a.tooltip:0 "A Spacing Guild Enclave is founded."
+
+ enclave.25:0 "Spacing Guild Enclave Destroyed"
+ enclave.25.desc:1 "Our fleet has overcome the defenses of the mercenaries in [merc_system.GetName], and their station has been blown to pieces. The rest of the [FROM.GetName] collapsed quickly after, and their remaining fleets have disbanded. While some of the surviving captains may turn to piracy, others have announced their plans to honor smaller contracts, offering logistical support or space station garrisoning. But such trifling affairs are of little consequence. The important fact is that the Spacing Guild Enclave is no more, and from its wreckage we have been able to salvage a sizable amount of resources."
+ enclave.26.desc:1 "Word has reached us that a Spacing Guild Enclave has been destroyed by the [mercenary_destroyer.GetName] in [merc_system.GetName]. The aggressors proved too strong for the [FROM.GetName] to face on their own, and the station housing the Board, barracks, and their shipyards was destroyed. The Spacing Guild fleet disbanded shortly after, as every captain was left to fend for themselves, but some representatives have stated that they will honor the company's contracts in logistics and starbase garrisoning as best they can despite the dissolution of the Company."
+
+ enclave.27:0 "Emergency Fleet Recall"
+ enclave.27.desc:0 "Dear valued client,\n\nAs we currently find ourselves under attack, we have urgent need to recall our own forces. As per our contract, we will immediately enact clause 285b.15, and our fleet will leave your service as soon as this notice reaches you. We look forward to renewing our partnership once this unfortunate situation is resolved, and apologize for any inconvenience."
+
+ enclave.28.a:0 "Die and rot, Spacing Guild scum."
+
+ enclave.205.c:1 "We are interested in setting up §YSpacing Guild Garrisons§!."
+
+ mercenary_tt_hirefleet:0 "Take control of the §YSpacing Guild fleet§! of this enclave for 10 years."
+ mercenary_tt_managefleet:0 "Cancel or prolong your §YSpacing Guild fleet§! contract."
+
+ enclave.210.desc:0 "Excellent! Recruiting a [mercenary_enclave_country.GetName] fleet is always the right choice. Our forces are amongst the best-trained and most disciplined in the galaxy, and our tech is cutting edge. Pirates, insurgents, and any other rabble you might have recourse to deal with will soon learn to show respect.\n\n Additionally, each of our fleets comes with a battle-proven admiral at no extra charge. Adept in all facets of interstellar warfare, they will surely lead your forces to victory."
+
+ enclave.215.desc:1 "Do you wish to terminate or prolong a contract? Let us prepare the necessary documents. We are currently running a promotion where customers receive a complimentary crate of grenades for every renewed contract!"
+
+ enclave.220.desc:0 "Our garrisons offer exceptional value. However, please keep in mind that at [mercenary_enclave_country.GetName] we frown upon the term 'mercenary.' The word is too blunt, and carries far too many negative associations. Our 'defense contractors' are standing by to prepare your station for the arrival of our 'safety specialists.' Once we're on site, these specialists will begin drilling the station crew to bring out their best. \n\n At [mercenary_enclave_country.GetName] we aim to train only the finest peacekeepers."
+
+
+ enclave.235.1.desc:0 "With these funds, we could greatly expand our operation. More ships, more personnel, bigger and better training facilities... We would be able to do so much more to help keep the peace."
+ enclave.235.2.desc:0 "In an ever-changing and complex galaxy, security concerns are paramount. Your donation would allow us to scale up our operations and services !"
+ enclave.235.3.desc:0 "Just imagine: [mercenary_enclave_country.GetName] deployed all across the galaxy for civilian and military operation... An unprecedented level of security for all..."
+ enclave.235.4.desc:1 "When we started this, one of our founders had a dream: to do for galactic security what megacorps have done for inequality. Today, I am excited to say that this goal is within our reach."
+ enclave.235.5.desc:0 "*We will field the LARGEST fleet in the galaxy! Credits will flow. Civilians will finally enjoy the stability they deserve. Nations will fight for our contracts… Oh the face of our shareholders when I tell them the news!"
+
+ enclave.240.desc:0 "Yes. These are concerning times for all. Our team of strategic problem solvers has a steadfast moral compass and unwavering dedication to creating a safer galaxy. We took great risks to closely monitor the emergence of new perils and can provide you with actionable intel about..."
+
+ small_merc_army_hire:0 "These mercenaries are hired indefinitely but have a high upkeep. This force includes §Y5 Spacing Guild Armies§! "
+ small_mecha_merc_army_hire:0 "These mercenaries are hired indefinitely but have a high upkeep. This force includes §Y5 Mechanized Spacing Guild Armies§! "
+ medium_merc_army_hire:0 "These mercenaries are hired indefinitely but have a high upkeep. This force includes §Y10 Spacing Guild Armies§! "
+ medium_mecha_merc_army_hire:0 "These mercenaries are hired indefinitely but have a high upkeep. This force includes §Y10 Mechanized Spacing Guild Armies§! "
+ large_merc_army_hire:0 "These mercenaries are hired indefinitely but have a high upkeep. This force includes §Y15 Spacing Guild Armies§! "
+
+ enclave.280.a.desc:1 "Esteemed patron! What business brings you to us today? Have you seen our latest ship schematics? They will be the core of our new 'Personal Security' offer for civilian customers."
+ enclave.280.b.desc:0 "What a pleasure to receive you! We have prepared some refreshments, should it please you to sample them while we summon the Board. If you direct your attention to the window, you'll see one of our peacekeeping divisions engaged in maneuvers. The training dummies represent civilians. Note how efficiently they round them up and handle them. A marvel of military precision."
+ enclave.280.c.desc:0 "We are always delighted to meet our patrons. Rest assured that the next dividend shipment should reach you shortly. Would you care to tell us what you think about our range of new services in high consequence protection? We think our civilian clients will love them!"
+
+ enclave.280.c.timeout: "The enclave is still upgrading with our tech. We can share new technologies with them after §Y[event_target:mercenary_enclave_country.updating_databanks_timer]§!."
+ enclave.285.desc:1 "You certainly understand that recalling a fleet is a sensitive matter. We have of course prepared the necessary loopholes in all our standard contracts, but we will need at least six months to bring the fleet back, and a... generous compensation to avoid upsetting our current customers.\n\n We believe that this course of action is not in the best interests of our organization, but you are our patron - we'll make it happen if you wish it so."
+
+ enclave.290.desc:1 "The Spacing Guild Fleet that we commandeered from our enclave is awaiting orders."
+
+ enclave.294.desc:1 "Dearest client,\n\nAs provisioned by clause 285b.15 of our contract, we must regrettably bring our arrangement to an early close and recall the Spacing Guild Fleet that you rented from us. As per contract stipulations: this notice serves as your 3-month warning before the fleet must leave your service. We enclose the generous compensation to which you are entitled.\n\nWe apologize for the inconvenience, and wish you the best of luck in your future endeavors."
+
+
+ enclave.2030.desc:1 "Our logistic support service is there to help you deploy your fleets to the farthest reaches of the galaxy. Our dedicated experts will make sure that your ships are equipped with all they need, from ammunition to food, down to the last bolt on your temperature regulators. Additionally, we will set up supply depots ahead of the fleet, or broker provisioning contracrs with local civilian companies. Your ships deserve the best care, and we are here to provide it."
+
+ enclave.2035.desc:1 "Dearest client,\n\nThe Logistic Support service we provide you is due for renewal. As per the terms of our contract: if we do not receive prompt instructions to do otherwise, you will be automatically billed for renewal of this service.\n\nWe trust that you are satisfied, and look forward to doing more business with you!"
+
+
+ #Modifiers
+ mercenary_fleet_size_upgrade_1:0 "Spacing Guild Fleet Size Upgrade"
+ hired_mercenary_fleet_naval_cap_usage:0 "Naval Capacity Usage for Hired Spacing Guild Fleet"
+ country_enclave_capacity_decrease_modifier:0 "Spacing Guild Enclaves Created"
+
+ tactic_v_khan:0 "Spacing Guild Tactics: The Khan"
+ tactic_v_gray:0 "Spacing Guild Tactics: The Gray Tempest"
+ tactic_v_swarm:0 "Spacing Guild Tactics: The Prethoryns"
+ tactic_v_extradimensional:0 "Spacing Guild Tactics: Extradimensionals"
+ tactic_v_ai_empire:0 "Spacing Guild Tactics: The Contingency"
+
+ requires_mercenary_agreement:0 "§RRequires a §YDiplomatic Agreement§! with a Spacing Guild Enclave.§!"
+
+ enclave_mercenary_station:0 "Spacing Guild Starbase"
+ enclave_mercenary_station_plural:0 "Spacing Guild Starbases"
+ enclave_mercenary_starbase_ruined:0 "Ruined Spacing Guild Starbase"
+ enclave_mercenary_starbase_ruined_desc:0 "This once-proud fortress of Spacing Guild commerce has fallen to ruin; its showrooms have been looted of all their pitiless treasures."
+
+ mercenary_army:0 "Spacing Guild Army"
+ mercenary_army_desc:0 "These troops are in it for the money. They are ruthless and efficient, but while risk is part of the job, they are unwilling to sacrifice themselves for a cause. And will never pass on a chance to pillage."
+ mecha_army:0 "Mechanized Spacing Guild Army"
+ mecha_army_desc:0 "The best mercenaries on the market. These troops make up for their low numbers by piloting huge walking machines. Although they are not the bravest soldiers, they are merciless, and leave only smoldering ruins in their wake."
+
+ #Situations
+ mercenary_dividends:0 "Spacing Guild Dividends"
+ mercenary_dividends_type:1 "$mercenary_dividends$"
+ mercenary_dividends_desc:0 "This enclave is accumulating tribute for their patron."
+ mercenary_dividends_monthly_change_tooltip:0 "$situation_monthly_change_tooltip_no_control$"
+ high_level:0 "I"
+ lord_of_war:0 "Lord of War"
+
+ enclave.2000.name:0 "Spacing Guild Enclave Pays Dividends"
+ enclave.2000.desc:1 "Esteemed Patron, our recent contracts have been fruitful. We have expanded our civilian operations, and several corporations have hired us for a variety of security and peacekeeping services. While on contract, our operatives chanced upon some valuable scientific research. You will find it attached along with your regular dividends."
+ enclave.2005.desc:1 "Esteemed Patron, the company is doing well, and our earnings are steadily increasing. Here are your dividends, along with an extra delivery of resources we recovered from a civilian client who defaulted on their payment."
+ enclave.2010.desc:1 "Esteemed Patron, we are pleased to announce record profits during this fiscal interval! As such, we have included a generous bonus to your regular dividends."
+ enclave.2015.desc:1 "Esteemed Patron, our shipyards have been working tirelessly to produce the very best fleet possible. In addition to your dividends, we are pleased to offer you a complimentary fleet of our latest designs for you to review and test out. Let us know what you think of them!"
+ enclave.2020.desc:1 "Esteemed Patron, our latest peacekeeping operation had us dismantle several pirate operations and we recovered an extraordinary amount of resources, technological data and ships. Most of these have been set apart for you, in addition to your well-earned dividends."
+ enclave.2025.desc:1 "Esteemed Patron, the company is going through difficult times. We lost several civilian clients, and various of our other operations ended in costly failures. We are setting up a restructuring plan that will cut expenditures across the board, and we will be letting some of our staff go.\n\nRest assured that we worked tirelessly to bring you your dividends, and that this misfortune is only temporary."
+ enclave.2025.a:0 "Disappointing."
+ enclave.2025.b:0 "You're fired. See the Board about your severance package."
+ enclave.2025.c:0 "Let us help instead."
+ enclave.2040.desc:0 "You want to share your technology? Your trust in us is an honor, dear patron. While our R&D department is committed to keeping us on the bleeding edge of research, we simply cannot mobilize the same amount of resources as you. And any knowledge that you share with us will be used to develop our activities in the most ethical manner!"
+ enclave.2040.a.tt:0 "We will share our §Ytechnology§! with this enclave. This can only be done once every §Y10 years§!."
+ 
+ resolution_defenseprivatization_defense_contracts_tooltip:1 "Every §YSpacing Guild Enclave§! gains §G+10§! Naval Capacity.\n§YSpacing Guild Dividends§! are more frequent.\nHired §YSpacing Guild Fleets§! take up §G5%§! less Naval Capacity but have §R+10%§! Energy Upkeep."
+ resolution_defenseprivatization_private_support_troops_tooltip:1 "Every §YSpacing Guild Enclave§! gains §G+20§! Naval Capacity.\n§YSpacing Guild Dividends§! are more frequent.\nHired §YSpacing Guild Fleets§! take up §G10%§! less Naval Capacity but have §R+20%§! Energy Upkeep."
+ resolution_defenseprivatization_condottieri_tooltip:1 "Every §YSpacing Guild Enclave§! gains §G+30§! Naval Capacity.\n§YSpacing Guild Dividends§! are more frequent.\nHired §YSpacing Guild Fleets§! take up §G15%§! less Naval Capacity but have §R+30%§! Energy Upkeep.\n\n$resolution_defenseprivatization_breach$"
+ resolution_defenseprivatization_security_business_tooltip:1 "Every §YSpacing Guild Enclave§! gains §G+40§! Naval Capacity.\n§YSpacing Guild Dividends§! are more frequent.\nHired §YSpacing Guild Fleets§! take up §G20%§! less Naval Capacity but have §R+40%§! Energy Upkeep.\n§G+20%§! £diplo_weight£ §YDiplomatic Weight§! while a §YSpacing Guild Fleet§! is hired.\n\n$resolution_defenseprivatization_breach$"
+ resolution_defenseprivatization_corporate_warlords_tooltip:1 "Every §YSpacing Guild Enclave§! gains §G+50§! Naval Capacity.\n§YSpacing Guild Dividends§! are more frequent.\nHired §YSpacing Guild Fleets§! take up §G25%§! less Naval Capacity but have §R+50%§! Energy Upkeep.\n§G+40%§! £diplo_weight£ §YDiplomatic Weight§! while a §YSpacing Guild Fleet§! is hired.\n\n§YHaving no hired Spacing Guild§! is §Rbanned§!."
+
+ resolution_defenseprivatization_breach:0 "§YBeing at war without any hired Spacing Guild fleets§! is §Rbanned§!."
+

@@ -1,0 +1,375 @@
+##########################################################################
+# Decisions
+##########################################################################
+#decision_sandtrout_planting_terraform = {
+#	sound = event_administrative_work
+#	icon = decision_consecrated_worlds
+#	resources = {
+#		category = decisions
+#		cost = {
+#		trigger = {
+#				has_modifier = terraforming_candidate
+#				is_colonizable = no
+#			}
+#			sr_zro = 300
+#			energy = 3000
+#			influence = 500
+#		}
+#		cost = {
+#		trigger = {
+#				OR = { 
+#				is_colonizable = yes
+#				is_colony = yes
+#				}
+#				NOT = { is_planet_class = pc_desert }
+#			}
+#			sr_zro = 150
+#			energy = 2500
+#			influence = 500
+#		}
+#		cost = {
+#		trigger = {
+#				OR = {
+#				is_colonizable = yes
+#				is_colony = yes
+#				}
+#				is_planet_class = pc_desert
+#			}
+#			sr_zro = 100
+#			energy = 1000
+#			influence = 500
+#		}
+#		cost = {
+#		trigger = {
+#				is_colony = yes
+#			}
+#			influence = 500
+#		}
+#	}
+#
+#	potential = {
+#		exists = space_owner
+#		exists = from
+#		space_owner = { is_same_value = from }
+#		space_owner = {
+#		    OR = {
+#		has_origin = origin_zro_worm
+#		    }
+#		}
+#		NOT = { has_planet_flag = zro_worm_terraforming_flag }
+#		is_star = no
+#		is_artificial = no
+#		is_ringworld = no
+#		NOT = { has_deposit = d_zro_worm_colony}
+#		NOT = { has_deposit = d_zro_worm_home}
+#		NOT = { is_planet_class = pc_gaia }
+#		NOT = { is_planet_class = pc_shielded }
+#		NOT = { is_planet_class = pc_machine }
+#		NOT = { is_planet_class = pc_ai }
+#		NOT = { is_planet_class = pc_city }
+#		NOT = { is_planet_class = pc_relic }
+#		OR = {
+#		has_modifier = terraforming_candidate
+#		is_colonizable = yes
+#		is_colony = yes
+#		}
+#		#NOR = {
+#		#	has_planet_flag = consecrated@from
+#		#	has_modifier = consecrated_quality_1
+#		#	has_modifier = consecrated_quality_2
+#		#	has_modifier = consecrated_quality_3
+#		#	has_modifier = consecrated_quality_4
+#		#}
+#	}
+#
+#
+#	effect = {
+#	if = {
+#	 	limit = {
+#	 	OR = {
+#	 	is_colonizable = yes
+#	 	is_colony = yes
+#	 	}
+#	 	}
+#	 	add_modifier = { modifier = "planet_zro_worm_terraforming" days = 1800 }
+#		 }
+#	if = {
+#	 	limit = {
+#	 	is_colonizable = no
+#	 	is_colony = no
+#	 	}
+#	 	add_modifier = { modifier = "planet_zro_worm_terraforming" }
+#	 	remove_modifier = terraforming_candidate
+#		}
+#		set_planet_flag = zro_worm_terraforming_flag
+#		custom_tooltip = zro_worm.terraform_tooltip
+#		ROOT = {
+#			hidden_effect = {
+#				planet_event = { id = zro_worm.3 days = 1800 }
+#			}
+#		}
+#		if = {
+#	 		limit = {
+#	 		NOT = { is_planet_class = pc_desert }
+#	 		}
+#		ROOT = {
+#			hidden_effect = {
+#				planet_event = { id = terra.5 days = 1 }
+#			}
+#		}
+#		}
+#		hidden_effect = {
+#			space_owner = { country_event = { id = zro_worm.4 days = 1800 } }
+#		}
+#		}
+#
+#	ai_weight = {
+#		weight = 1000
+#	}
+#}
+
+decision_great_sandworm_terraform = {
+	sound = event_administrative_work
+	icon = decision_consecrated_worlds
+	owned_planets_only = yes
+	
+	potential = {
+		exists = space_owner
+		exists = from
+		space_owner = { is_same_value = from }
+		space_owner = { has_country_flag = relic_great_sandworm_activated }
+		NOT = { has_planet_flag = zro_worm_terraforming_flag }
+		NOT = { has_planet_flag = zro_great_worm_terraforming_flag }
+		NOT = {
+		has_deposit = d_zro_worm_colony
+	    has_deposit = d_zro_worm_home
+		has_deposit = d_zro_great_sandworm 
+		is_planet_class = pc_city
+		is_planet_class = pc_machine 
+		is_planet_class = pc_relic 
+		}
+		OR = {
+		has_modifier = terraforming_candidate
+		is_colonizable = yes
+		is_colony = yes
+		}
+		#NOR = {
+		#	has_planet_flag = consecrated@from
+		#	has_modifier = consecrated_quality_1
+		#	has_modifier = consecrated_quality_2
+		#	has_modifier = consecrated_quality_3
+		#	has_modifier = consecrated_quality_4
+		#}
+	}
+	
+	resources = {
+		category = decisions
+		cost = {
+		trigger = {
+				OR = { 
+				is_colonizable = yes
+				is_colony = yes
+				}
+				NOT = { is_planet_class = pc_desert }
+			}
+			energy = 5000
+			influence = 250
+		}
+		cost = {
+		trigger = {
+				OR = {
+				is_colonizable = yes
+				is_colony = yes
+				}
+				is_planet_class = pc_desert
+			}
+			energy = 2500
+			influence = 250
+		}
+		cost = {
+		trigger = {
+				is_colony = yes
+			}
+			energy = 1000
+			influence = 250
+		}
+	}
+
+
+	effect = {
+		if = {
+	 	    limit = {
+	 	        OR = {
+	 	        is_colonizable = yes
+	 	        is_colony = yes
+	 	        }
+	 	    }
+	 	    add_modifier = { modifier = "planet_great_sandworm_terraforming" days = 1800 }
+		}
+		if = {
+		    limit = {
+		    is_colonizable = no
+		    is_colony = no
+		    }
+		    add_modifier = { modifier = "planet_zro_worm_terraforming" }
+		    remove modifier = terraforming_candidate
+		}
+		set_planet_flag = zro_great_sandworm_terraforming_flag
+		custom_tooltip = zro_great_sandworm.terraform_tooltip
+		ROOT = {
+			hidden_effect = {
+				planet_event = { id = zro_worm.5 days = 1800 }
+			}
+		}
+		if = {
+	 		limit = {
+	 		    NOT = { is_planet_class = pc_desert }
+	 		}
+		}
+		ROOT = {
+			hidden_effect = {
+				planet_event = { id = terra.5 days = 1 }
+			}
+		}
+		hidden_effect = {
+		    space_owner = { country_event = { id = zro_worm.6 days = 1800 } }
+			owner = { remove_country_flag = relic_great_sandworm_activated }
+			#planet_event = { id = zro_worm.18 } #Notification event
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 10
+			owner = { has_origin = origin_zro_worm }
+		}
+		modifier = {
+		    factor = 5
+			has_active_building = building_zro_dispensery
+	    }
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 100
+				}
+			}
+		}
+	}
+	
+}
+##########################################################################
+decision_planet_luxuries_boost_zro = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_luxuries
+
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				num_pops < 10
+			}
+			sr_zro = 25
+		}
+		cost = {
+			trigger = {
+				num_pops >= 10
+				num_pops < 20
+			}
+			sr_zro = 50
+		}
+		cost = {
+			trigger = {
+				num_pops >= 20
+				num_pops < 30
+			}
+			sr_zro = 100
+		}
+		cost = {
+			trigger = {
+				num_pops >= 30
+				num_pops < 40
+			}
+			sr_zro = 200
+		}
+		cost = {
+			trigger = {
+				num_pops >= 40
+			}
+			sr_zro = 250
+		}
+		cost = {
+			trigger = {
+				num_pops >= 50
+				num_pops < 60
+			}
+			sr_zro = 460
+		}
+		cost = {
+			trigger = {
+				num_pops >= 60
+				num_pops < 70
+			}
+			sr_zro = 535
+		}
+		cost = {
+			trigger = {
+				num_pops >= 70
+				num_pops < 85
+			}
+			sr_zro = 610
+		}
+		cost = {
+			trigger = {
+				num_pops >= 85
+				num_pops < 100
+			}
+			sr_zro = 685
+		}
+		cost = {
+			trigger = {
+				num_pops >= 100
+			}
+			sr_zro = 760
+		}
+	}
+
+	potential = {
+	    owner = { has_origin = origin_zro_worm }
+	}
+
+	allow = {
+		NOT = { has_modifier = planet_luxuries_boost_zro }
+	}
+
+	effect = {
+		add_modifier = { modifier = "planet_luxuries_boost_zro" days = 3600 }
+	}
+
+	#description = zro_provision_effect
+
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 10
+			owner = { has_origin = origin_zro_worm }
+		}
+		modifier = {
+			factor = 5
+			happiness_planet < 55
+		}
+		modifier = {
+			factor = 2
+			years_passed < 20
+		}
+		modifier = {
+		    weight = 0
+			has_active_building = building_zro_dispensery
+	    }
+	}
+	
+}

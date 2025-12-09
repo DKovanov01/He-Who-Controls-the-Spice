@@ -1,0 +1,4 @@
+
+set_advanced_tax_resolutions = {
+	pass_resolution_no_cooldown = resolution_emperor_sr_zro_1
+}

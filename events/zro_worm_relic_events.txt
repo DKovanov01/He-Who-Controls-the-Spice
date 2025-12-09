@@ -1,0 +1,135 @@
+namespace = arrakis
+
+# Worm Introduction
+fleet_event = {
+	id = arrakis.1
+	title = "arrakis.1.name"
+	desc = "arrakis.1.desc"
+	picture = GFX_evt_warm_barren
+	show_sound = event_wind_ruins ####
+	location = from
+
+	archaeology = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = arrakis.1.a
+		owner = {
+			add_monthly_resource_mult = {
+			    resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = arrakis.2
+	title = "arrakis.2.name"
+	desc = "arrakis.2.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_wind_ruins ####
+	location = from
+
+	archaeology = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = arrakis.2.a
+		owner = {
+			add_resource = { minor_artifacts = 10 }
+		}
+	}
+}
+
+fleet_event = {
+	id = arrakis.3
+	title = "arrakis.3.name"
+	desc = "arrakis.3.desc"
+	picture = GFX_evt_habitable_dig_site
+	show_sound = event_wind_ruins ####
+	location = from
+
+	archaeology = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = arrakis.3.a
+		owner = {
+			add_resource = { sr_zro = 20 }
+		}
+	}
+}
+
+fleet_event = {
+	id = arrakis.4
+	title = "arrakis.4.name"
+	desc = "arrakis.4.desc"
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_wind_ruins ####
+	location = from
+
+	archaeology = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = arrakis.4.a
+		owner = {
+			add_resource = { sr_zro = 30 }
+		}
+	}
+}
+
+fleet_event = {
+	id = arrakis.5
+	title = "arrakis.5.name"
+	desc = "arrakis.5.desc"
+	picture = GFX_evt_ancient_records
+	show_sound = event_wind_ruins ####
+	location = from
+
+	archaeology = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = arrakis.5.a
+		owner = {
+			add_monthly_resource_mult = {
+			    resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = arrakis.6
+	title = "arrakis.6.name"
+	desc = "arrakis.6.desc"
+	picture = GFX_evt_desert
+	show_sound = event_wind_ruins ####
+	location = from
+
+	archaeology = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = arrakis.6.a
+		large_artifact_reward = yes
+		owner = {
+			add_resource = { sr_zro = 100 }
+			add_relic = r_great_sandworm
+		}
+	}
+}
+

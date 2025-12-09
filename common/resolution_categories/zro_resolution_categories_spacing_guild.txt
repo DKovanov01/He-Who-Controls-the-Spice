@@ -1,0 +1,23 @@
+
+resolution_category_spacing_guild = {
+	group = commerce_industry
+	icon = "GFX_resolution_imperial_council"
+
+	resolution_types = {
+		"resolution_spacing_guild_establishment"
+		"resolution_spacing_guild_fees"
+		"resolution_space_travel_monopolization"
+		"resolution_spice_industry_monopolization"
+		"resolution_full_spice_industry_monopoly"
+	}
+}
+
+resolution_category_arrakis_recreation = {
+	group = commerce_industry
+	icon = "GFX_resolution_imperial_council"
+
+	resolution_types = {
+		"resolution_sanctions_great_sandworm_ban_repeal"
+		"resolution_sanctions_great_sandworm_ban"
+	}
+}

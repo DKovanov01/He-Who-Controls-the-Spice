@@ -1,0 +1,9 @@
+##################
+# MISC
+##################
+
+@speed_very_slow = 60
+@speed_slow = 80
+@speed_default = 100
+@speed_fast = 120
+@speed_very_fast = 140

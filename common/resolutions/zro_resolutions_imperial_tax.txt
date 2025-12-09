@@ -1,0 +1,944 @@
+@resolution_weight_hated = 3
+@resolution_weight_disliked = 4
+@resolution_weight_unpopular = 5
+@resolution_weight_normal = 6
+@resolution_weight_popular = 6.5
+@resolution_weight_loved = 7
+
+@resolution_cost_t1 = 100
+@resolution_cost_t2 = 150
+@resolution_cost_t3 = 200
+@resolution_cost_t4 = 250
+@resolution_cost_t5 = 300
+@resolution_cost_denounce = 25
+
+@resolution_flag_timer = 360
+
+#example_resolution = {
+#	icon = "name of the icon key"
+#	resources = {} # cost and category
+#	target = yes/no # if this resolution requires a target country
+#	harmful = yes/no # if the AI should consider this harmful when choosing target
+#	modifier = {} # modifier to be applied to all community members if passed
+#	triggered_modifier = {} # triggered modifier to be applied, scope is country
+#	effect = {}# effect to be applied if passed, scope is proposer unless there is a target country - then scope is target country, with proposer in from scope
+#	fail_effects = {} # effect to be applied if failed, scope is proposer unless there is a target country - then scope is target country, with proposer in from scope
+#	potential = {} # potential trigger, scope is country
+#	allow = {} # allow trigger, scope is country
+#	active = {} # Enacted resolutions are cancelled if this trigger fails
+#
+#	ai_weight = {} # ai weight modifiers, scope is country. from scope is the target country for targeted resolutions
+#	NOTE: all ai_weight modifiers are multiplicative. The end result is also multiplied with a factor based on the opinion towards the proposer and/or target,
+#	see RESOLUTION_TARGET_OPINION_MIN_FACTOR etc. in 00_defines.txt. Also see RESOLUTION_VOTE_SUPPORT_THRESHOLD etc. for balancing the values.
+#
+#	valid_target = {} # valid targets trigger, scope is country
+#}
+
+# NOTE: Remember to add Resolutions to a Resolution Category!
+
+### IMPERIAL COUNCIL
+
+resolution_custodian_form_empire = {
+	icon = "GFX_resolution_form_galactic_empire"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t3
+		}
+	}
+	target = no
+
+	modifier = {
+	}
+
+	effect = {
+		if = {
+			limit = { is_gestalt = no }
+			custom_tooltip = resolution_custodian_form_empire_tooltip
+		}
+		if = {
+			limit = { is_machine_empire = yes }
+			custom_tooltip = resolution_custodian_form_empire_tooltip_machine
+		}
+		if = {
+			limit = { is_hive_empire = yes }
+			custom_tooltip = resolution_custodian_form_empire_tooltip_hive
+		}
+		hidden_effect = {
+			random_playable_country = {
+				limit = { is_galactic_custodian = yes }
+				country_event = { id = emperor.1 }
+			}
+			set_tax_resolutions = yes
+			set_advanced_tax_resolutions = yes
+		}
+	}
+
+	fail_effects = {
+	}
+
+	potential = {
+		has_nemesis = yes
+		is_galactic_custodian = yes
+		is_active_resolution = "resolution_custodian_perpetual_custodianship"
+		has_galactic_emperor = no
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_no_war_in_heaven"
+			NOT = { has_global_flag = war_in_heaven_ongoing } # Can't become Emperor during WiH
+		}
+	}
+
+	active = {
+		has_galactic_custodian = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_disliked
+		modifier = {
+			factor = 10
+			any_neighbor_country = { is_crisis_faction = yes }
+		}
+		modifier = {
+			factor = 4
+			has_crisis_stage_1 = yes
+		}
+		modifier = {
+			factor = 6
+			has_crisis_stage_2 = yes
+		}
+		modifier = {
+			factor = 8
+			has_crisis_stage_3 = yes
+		}
+		modifier = {
+			factor = 20
+			has_crisis_stage_4 = yes
+		}
+		modifier = {
+			factor = 20
+			any_playable_country = { has_country_flag = crisis_sphere_revealed }
+		}
+		modifier = {
+			factor = 20
+			is_galactic_custodian = yes
+			is_authoritarian = yes
+		}
+		modifier = {
+			factor = 4
+			is_galactic_custodian = yes
+		}
+		modifier = {
+			factor = 8
+			any_playable_country = { has_been_declared_crisis = yes }
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = gray_goo_crisis_active
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = marauder_crisis_ongoing
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			overlord = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			any_country = { is_country_type = awakened_fallen_empire }
+		}
+	}
+}
+
+# Zro Tax
+
+#Exempt
+resolution_emperor_sr_zro_1 = {
+	icon = "GFX_resolution_imperial_trade_company"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+
+	modifier = {
+	}
+
+	effect = {
+		hidden_effect = {
+			cancel_resolution = resolution_emperor_sr_zro_2
+			random_playable_country = {
+				limit = { is_galactic_emperor = yes }
+				remove_modifier = sr_zro_tax_2
+			}
+		}		
+	}
+
+	fail_effects = {
+	}
+
+	potential = {
+		has_galactic_emperor = yes
+	}
+
+	allow = {
+		is_active_resolution = resolution_emperor_sr_zro_2
+		OR = {
+			is_galactic_emperor = yes
+			imperial_authority < 60
+		}	
+	}
+
+	active = {
+		has_galactic_emperor = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_popular
+		modifier = {
+			factor = 10
+			any_neighbor_country = { is_crisis_faction = yes }
+		}
+		modifier = {
+			factor = 4
+			has_crisis_stage_1 = yes
+		}
+		modifier = {
+			factor = 6
+			has_crisis_stage_2 = yes
+		}
+		modifier = {
+			factor = 8
+			has_crisis_stage_3 = yes
+		}
+		modifier = {
+			factor = 20
+			has_crisis_stage_4 = yes
+		}
+		modifier = {
+			factor = 20
+			any_playable_country = { has_country_flag = crisis_sphere_revealed }
+		}
+		modifier = {
+			factor = 20
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 8
+			any_playable_country = { has_been_declared_crisis = yes }
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = gray_goo_crisis_active
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = marauder_crisis_ongoing
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			overlord = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			any_country = { is_country_type = awakened_fallen_empire }
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_2
+			is_galactic_emperor = no
+		}
+		modifier = {
+			factor = 0
+			is_active_resolution = resolution_emperor_sr_zro_2
+			is_galactic_emperor = yes
+		}
+	}
+}
+
+#Low
+resolution_emperor_sr_zro_2 = {
+	icon = "GFX_resolution_imperial_trade_company"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t2
+		}
+	}
+	target = no
+
+	modifier = {
+		country_sr_zro_produces_mult = -0.025
+	}
+
+	effect = {
+		hidden_effect = {
+		cancel_resolution = resolution_emperor_sr_zro_1
+		cancel_resolution = resolution_emperor_sr_zro_3
+		random_playable_country = {
+			limit = { is_galactic_emperor = yes }
+			remove_modifier = sr_zro_tax_3
+			add_modifier = { modifier = sr_zro_tax_2 }
+		}
+		}
+		custom_tooltip = tax_resolution_1_opinion
+	}
+
+	fail_effects = {
+	}
+
+	potential = {
+		has_galactic_emperor = yes
+	}
+
+	allow = {
+		OR = {
+			is_active_resolution = resolution_emperor_sr_zro_1
+			is_active_resolution = resolution_emperor_sr_zro_3
+		}	
+		OR = {
+			is_galactic_emperor = yes
+			imperial_authority < 70
+		}		
+		custom_tooltip = {
+			fail_text = RESOURCE_NOT_ON_MARKET
+			is_on_market = sr_zro
+		}
+	}
+
+	active = {
+		has_galactic_emperor = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_normal
+		modifier = {
+			factor = 10
+			any_neighbor_country = { is_crisis_faction = yes }
+		}
+		modifier = {
+			factor = 4
+			has_crisis_stage_1 = yes
+		}
+		modifier = {
+			factor = 6
+			has_crisis_stage_2 = yes
+		}
+		modifier = {
+			factor = 8
+			has_crisis_stage_3 = yes
+		}
+		modifier = {
+			factor = 20
+			has_crisis_stage_4 = yes
+		}
+		modifier = {
+			factor = 4
+			imperial_authority >= 140
+			imperial_authority < 160
+			is_active_resolution = resolution_emperor_sr_zro_1
+		}
+		modifier = {
+			factor = 6
+			imperial_authority >= 160
+			imperial_authority < 180
+			is_active_resolution = resolution_emperor_sr_zro_1
+		}
+		modifier = {
+			factor = 8
+			imperial_authority >= 180
+			imperial_authority < 200
+			is_active_resolution = resolution_emperor_sr_zro_1
+		}
+		modifier = {
+			factor = 20
+			imperial_authority = 200
+			is_active_resolution = resolution_emperor_sr_zro_1
+		}
+		modifier = {
+			factor = 20
+			any_playable_country = { has_country_flag = crisis_sphere_revealed }
+		}
+		modifier = {
+			factor = 20
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 8
+			any_playable_country = { has_been_declared_crisis = yes }
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = gray_goo_crisis_active
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = marauder_crisis_ongoing
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			overlord = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			any_country = { is_country_type = awakened_fallen_empire }
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_3
+			is_galactic_emperor = no
+		}
+		modifier = {
+			factor = 0
+			is_active_resolution = resolution_emperor_sr_zro_3
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_1
+			is_galactic_emperor = yes
+		}
+	}
+}
+
+#Medium
+resolution_emperor_sr_zro_3 = {
+	icon = "GFX_resolution_imperial_trade_company"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t3
+		}
+	}
+	target = no
+
+	modifier = {
+		country_sr_zro_produces_mult = -0.1
+	}
+
+	effect = {
+		hidden_effect = {
+		cancel_resolution = resolution_emperor_sr_zro_2
+		cancel_resolution = resolution_emperor_sr_zro_4
+		random_playable_country = {
+			limit = { is_galactic_emperor = yes }
+			remove_modifier = sr_zro_tax_2
+			remove_modifier = sr_zro_tax_4
+			add_modifier = { modifier = sr_zro_tax_3 }
+		}
+		}
+		custom_tooltip = tax_resolution_3_opinion
+	}
+
+	fail_effects = {
+	}
+
+	potential = {
+		has_galactic_emperor = yes
+	}
+
+	allow = {
+		OR = {
+			is_active_resolution = resolution_emperor_sr_zro_2
+			is_active_resolution = resolution_emperor_sr_zro_4
+		}	
+		OR = {
+			is_galactic_emperor = yes
+			imperial_authority < 80
+		}	
+		custom_tooltip = {
+			fail_text = RESOURCE_NOT_ON_MARKET
+			is_on_market = sr_zro
+		}
+	}
+
+	active = {
+		has_galactic_emperor = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_disliked
+		modifier = {
+			factor = 10
+			any_neighbor_country = { is_crisis_faction = yes }
+		}
+		modifier = {
+			factor = 4
+			has_crisis_stage_1 = yes
+		}
+		modifier = {
+			factor = 6
+			has_crisis_stage_2 = yes
+		}
+		modifier = {
+			factor = 8
+			has_crisis_stage_3 = yes
+		}
+		modifier = {
+			factor = 20
+			has_crisis_stage_4 = yes
+		}
+		modifier = {
+			factor = 4
+			imperial_authority >= 140
+			imperial_authority < 160
+			is_active_resolution = resolution_emperor_sr_zro_2
+		}
+		modifier = {
+			factor = 6
+			imperial_authority >= 160
+			imperial_authority < 180
+			is_active_resolution = resolution_emperor_sr_zro_2
+		}
+		modifier = {
+			factor = 8
+			imperial_authority >= 180
+			imperial_authority < 200
+			is_active_resolution = resolution_emperor_sr_zro_2
+		}
+		modifier = {
+			factor = 20
+			imperial_authority = 200
+			is_active_resolution = resolution_emperor_sr_zro_2
+		}
+		modifier = {
+			factor = 20
+			any_playable_country = { has_country_flag = crisis_sphere_revealed }
+		}
+		modifier = {
+			factor = 20
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 8
+			any_playable_country = { has_been_declared_crisis = yes }
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = gray_goo_crisis_active
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = marauder_crisis_ongoing
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			overlord = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			any_country = { is_country_type = awakened_fallen_empire }
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_4
+			is_galactic_emperor = no
+		}
+		modifier = {
+			factor = 0
+			is_active_resolution = resolution_emperor_sr_zro_4
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_2
+			is_galactic_emperor = yes
+		}
+	}
+}
+
+#High
+resolution_emperor_sr_zro_4 = {
+	icon = "GFX_resolution_imperial_trade_company"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t4
+		}
+	}
+	target = no
+
+	modifier = {
+		country_sr_zro_produces_mult = -0.15
+	}
+
+	effect = {
+		hidden_effect = {		
+		cancel_resolution = resolution_emperor_sr_zro_3
+		cancel_resolution = resolution_emperor_sr_zro_5
+		random_playable_country = {
+			limit = { is_galactic_emperor = yes }
+			remove_modifier = sr_zro_tax_3
+			remove_modifier = sr_zro_tax_5
+			add_modifier = { modifier = sr_zro_tax_4 }
+		}
+		}
+		custom_tooltip = tax_resolution_3_opinion
+	}
+
+	fail_effects = {
+	}
+
+	potential = {
+		has_galactic_emperor = yes
+	}
+
+	allow = {
+		OR = {
+			is_active_resolution = resolution_emperor_sr_zro_3
+			is_active_resolution = resolution_emperor_sr_zro_5
+		}	
+		OR = {
+			is_galactic_emperor = yes
+			imperial_authority < 90
+		}	
+		custom_tooltip = {
+			fail_text = RESOURCE_NOT_ON_MARKET
+			is_on_market = sr_zro
+		}
+	}
+
+	active = {
+		has_galactic_emperor = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_disliked
+		modifier = {
+			factor = 10
+			any_neighbor_country = { is_crisis_faction = yes }
+		}
+		modifier = {
+			factor = 4
+			has_crisis_stage_1 = yes
+		}
+		modifier = {
+			factor = 6
+			has_crisis_stage_2 = yes
+		}
+		modifier = {
+			factor = 8
+			has_crisis_stage_3 = yes
+		}
+		modifier = {
+			factor = 20
+			has_crisis_stage_4 = yes
+		}
+		modifier = {
+			factor = 4
+			imperial_authority >= 140
+			imperial_authority < 160
+			is_active_resolution = resolution_emperor_sr_zro_3
+		}
+		modifier = {
+			factor = 6
+			imperial_authority >= 160
+			imperial_authority < 180
+			is_active_resolution = resolution_emperor_sr_zro_3
+		}
+		modifier = {
+			factor = 8
+			imperial_authority >= 180
+			imperial_authority < 200
+			is_active_resolution = resolution_emperor_sr_zro_3
+		}
+		modifier = {
+			factor = 20
+			imperial_authority = 200
+			is_active_resolution = resolution_emperor_sr_zro_3
+		}
+		modifier = {
+			factor = 20
+			any_playable_country = { has_country_flag = crisis_sphere_revealed }
+		}
+		modifier = {
+			factor = 20
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 8
+			any_playable_country = { has_been_declared_crisis = yes }
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = gray_goo_crisis_active
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = marauder_crisis_ongoing
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			overlord = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			any_country = { is_country_type = awakened_fallen_empire }
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_5
+			is_galactic_emperor = no
+		}
+		modifier = {
+			factor = 0
+			is_active_resolution = resolution_emperor_sr_zro_5
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_3
+			is_galactic_emperor = yes
+		}
+	}
+}
+
+#Very High
+resolution_emperor_sr_zro_5 = {
+	icon = "GFX_resolution_imperial_trade_company"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t5
+		}
+	}
+	target = no
+
+	modifier = {
+		country_sr_zro_produces_mult = -0.25
+	}
+
+	effect = {
+		hidden_effect = {		
+		cancel_resolution = resolution_emperor_sr_zro_4
+		random_playable_country = {
+			limit = { is_galactic_emperor = yes }
+			remove_modifier = sr_zro_tax_4
+			add_modifier = { modifier = sr_zro_tax_5 }
+		}
+		}
+		custom_tooltip = tax_resolution_4_opinion
+	}
+
+	fail_effects = {
+	}
+
+	potential = {
+		has_galactic_emperor = yes
+	}
+
+	allow = {
+		is_active_resolution = resolution_emperor_sr_zro_4
+		OR = {
+			is_galactic_emperor = yes
+			imperial_authority < 100
+		}	
+		custom_tooltip = {
+			fail_text = RESOURCE_NOT_ON_MARKET
+			is_on_market = sr_zro
+		}
+	}
+
+	active = {
+		has_galactic_emperor = yes
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_hated
+		modifier = {
+			factor = 10
+			any_neighbor_country = { is_crisis_faction = yes }
+		}
+		modifier = {
+			factor = 4
+			has_crisis_stage_1 = yes
+		}
+		modifier = {
+			factor = 6
+			has_crisis_stage_2 = yes
+		}
+		modifier = {
+			factor = 8
+			has_crisis_stage_3 = yes
+		}
+		modifier = {
+			factor = 20
+			has_crisis_stage_4 = yes
+		}
+		modifier = {
+			factor = 4
+			imperial_authority >= 140
+			imperial_authority < 160
+			is_active_resolution = resolution_emperor_sr_zro_4
+		}
+		modifier = {
+			factor = 6
+			imperial_authority >= 160
+			imperial_authority < 180
+			is_active_resolution = resolution_emperor_sr_zro_4
+		}
+		modifier = {
+			factor = 8
+			imperial_authority >= 180
+			imperial_authority < 200
+			is_active_resolution = resolution_emperor_sr_zro_4
+		}
+		modifier = {
+			factor = 20
+			imperial_authority = 200
+			is_active_resolution = resolution_emperor_sr_zro_4
+		}
+		modifier = {
+			factor = 20
+			any_playable_country = { has_country_flag = crisis_sphere_revealed }
+		}
+		modifier = {
+			factor = 20
+			is_galactic_emperor = yes
+		}
+		modifier = {
+			factor = 8
+			any_playable_country = { has_been_declared_crisis = yes }
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = gray_goo_crisis_active
+		}
+		modifier = {
+			factor = 8
+			has_global_flag = marauder_crisis_ongoing
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0.5
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			overlord = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			any_country = { is_country_type = awakened_fallen_empire }
+		}
+		modifier = {
+			factor = 1000
+			is_active_resolution = resolution_emperor_sr_zro_4
+			is_galactic_emperor = no
+		}
+	}
+}

@@ -1,0 +1,26 @@
+﻿l_english:
+
+ arrakis.1.name: "Native Village"
+ arrakis.1.desc: "After we established and followed the pattern of landscape changes, we have found that it's in fact affected by giant sandworms roaming the desert. While they mostly stay deep below the desert floor, these sandworms seem to occasionally approach and stay on the surface, presumably to hunt the locals that end up stranded in deep desert. We haven't actually seen any of the locals the sandworms might've been after, we're sure of their existence as we did manage to find traces of their existence in a cave that most likely used to be inhabited by them..."
+ arrakis.1.a: "Investigate it."
+ 
+ arrakis.2.name: "Spice Melange"
+ arrakis.2.desc: "While exploring the village, we have learned much about local population after managing to translate their texts. The locals call themselves Fremen, the planet we're on they've come to call "Dune" and the village we're currently in is referred to as a "Sietch" in their language. While we haven't found any more sietches, presumably because they're well hidden undergroudn, we have learned that this particular one was abandoned due to an extreme increase in temperatures in this region. While sifting through what's left of the locals' resources, we've also found remains of what the Fremen call Spice - a psychoactive drug that brings enormous health benifits and awakens Psionic abilities. Most of the traces of Spice were found next to an entrance that seems to lead deeper into the sietch..."
+ arrakis.2.a: "Explore further."
+ 
+ arrakis.3.name: "Water on Arrakis"
+ arrakis.3.desc: "Exploring the sietch further we have found a chamber that was clearly cared for much more than the rest of the village, pristine as the rest of it was. In this chamber remain a few larvas of some sort. While we're unsure of their origin, having attempted to dissect one of them, we've found it encapsulated a great amount of water and concentrated Spice. What we're entirely unsure about is where that water comes from - while we have found a few minor sources of water here deep underground, the sietch is mostly dry, and so is the planet..."
+ arrakis.3.a: "Investigate it."
+ 
+ arrakis.4.name: "Sandtrout"
+ arrakis.4.desc: "We have found that the larvas, called "Sandtrout" by the Fremen, are tied to local culture and are important in a number of Fremen rituals and customs, most often as the source of concentrated Spice. Also, their containment of such amount of water gave us another revelation: these larvas may be the reason Dune is the desert planet that it is. By encapsulating such amount of water and moisture, the Sandtrout take it away from the environment. Presumably Arrakis used to have large amouns of water on it millenia ago before these larvas essentially terraformed it. While there's no indication as to these Sandtrouts' origin, the best lead our team has is that they may somehow be related to the giant sandworms that roam the desert."
+ arrakis.4.a: "Find out how they're related."
+ 
+ arrakis.5.name: "Creation of Spice"
+ arrakis.5.desc: "Exploring Fremen texts, along with dissecting the Sandtrout and examening both the sandworms and the Spice, we came to a great revelation: the Sandtrout are responsible not only for terraforming Dune, which used to be a wet world eons ago, but also for the creation of Spice. Apparently, they mix water with local organic growth and form so cold "pre-spice mass". This mass, being brought to the surface, would cause an explosion, and under the heat of the planet forms the Spice. Having deciphered the last Fremen texts we've found, we learned that Sandtrout are an early form of the sandworms, which are called "Maker" or "Shai-Hulud" by the local population. Sandtrout themselves are born when a sandworm dies - thus creating an infinite cycle of keeping the planet dry and producing spice, making this planet the largest and most reliable source of Spice in the galaxy. Perhaps if we could capture one of these sandworms, we could recreate the process elsewhere..."
+ arrakis.5.a: "Capture a Sandworm."
+ 
+ arrakis.6.name: "Great Sandworm"
+ arrakis.6.desc: "Even having spent a long time observing the sandworms' behaviour, we still know very little about their actual behaviour. We've found they approach the surface when they feel rythmic noices, such as footsteps or vibrations caused by our ships. The Sietches built by local Fremen seem to be safe since the sandworms stay in sand and avoid the rocky regions of Dune. These sandworms could also grow hundreds of meters in length, making one's capture extremely difficult. Despite that, after having learned their basic behaviours, though it took us a great deal, we have managed to lure and capture a smaller sandworm and we're now successfully transporting it off-world. Along with it we've taken with us all the lifeforms we discovered it's related to, including some of the Sandtrout. Should we let them out on any other habitable planet, it's possible the terafforming process that happened to Dune will repeat, creating our own Arrakis-like worlds."
+ arrakis.6.a: "The Spice Must Flow..."
+ 

@@ -1,0 +1,111 @@
+planet_luxuries_boost_zro = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_luxuries.dds"
+	icon_frame = 1
+	planet_amenities_mult = 0.05
+	planet_immigration_pull_mult = 0.20
+	pop_citizen_happiness = 0.05
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.05
+	planet_jobs_energy_produces_mult = 0.05
+	#description = zro_provision_effect
+	#any_pop  = {
+	#limit = { pop_has_trait = trait_desertic }
+	#pop_citizen_happiness = 0.10
+	#}
+}
+
+planet_zro_worm_terraforming = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 2
+	pop_happiness = -0.1
+	#important = yes
+	#planet_amenities_mult = -0.1
+	#pop_citizen_happiness = -0.1
+	#planet_jobs_minerals_produces_mult = 0.15
+	#planet_jobs_alloys_produces_mult = 0.1
+	#planet_jobs_consumer_goods_produces_mult = 0.1
+}
+
+planet_great_sandworm_terraforming = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+	icon_frame = 2
+	pop_happiness = -0.1
+	planet_amenities_mult = -0.1
+	pop_citizen_happiness = -0.1
+	planet_jobs_minerals_produces_mult = 0.15
+	planet_jobs_alloys_produces_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+}
+
+resolution_spacing_guild_establishment = {
+    diplo_weight_economy_mult = 0.2
+	country_sr_zro_produces_mult = 0.10
+	pop_ethic_spiritualist_attraction_mult = 0.10
+	planet_pop_assemblers_upkeep_mult = 0.10
+	planet_pops_robotics_upkeep_mult = 0.10
+	ship_evasion_mult = 0.10
+	ship_speed_mult = 0.10
+}
+
+resolution_spacing_guild_fees = {
+    diplo_weight_economy_mult = 0.25
+	country_sr_zro_produces_mult = 0.15
+	pop_ethic_spiritualist_attraction_mult = 0.20
+	planet_pop_assemblers_upkeep_mult = 0.20
+	planet_pops_robotics_upkeep_mult = 0.20
+	planet_jobs_alloys_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.05
+	ship_evasion_mult = 0.25
+	ship_speed_mult = 0.25
+	country_naval_cap_mult = -0.25
+}
+
+resolution_space_travel_monopolization = {
+	diplo_weight_economy_mult = 0.30
+	country_sr_zro_produces_mult = 0.20
+	pop_ethic_spiritualist_attraction_mult = 0.40
+	planet_pop_assemblers_upkeep_mult = 0.40
+	planet_pops_robotics_upkeep_mult = 0.40
+	planet_jobs_alloys_produces_mult = -0.10
+	planet_jobs_minerals_produces_mult = -0.10
+	planet_jobs_energy_produces_mult = -0.10
+	ship_evasion_mult = 0.40
+	ship_speed_mult = 0.40
+	country_naval_cap_mult = -0.50
+}
+
+resolution_spice_industry_monopolization = {
+    planet_crime_mult = 0.1
+    diplo_weight_economy_mult = 0.35
+	country_sr_zro_produces_mult = -0.25
+	pop_ethic_spiritualist_attraction_mult = 0.40
+	planet_pop_assemblers_upkeep_mult = 0.50
+	planet_pops_robotics_upkeep_mult = 0.50
+	planet_jobs_alloys_produces_mult = -0.15
+	planet_jobs_minerals_produces_mult = -0.15
+	planet_jobs_energy_produces_mult = -0.15
+	ship_evasion_mult = 0.40
+	ship_speed_mult = 0.40
+	country_naval_cap_mult = -0.75
+}
+
+resolution_full_spice_industry_monopoly = {
+    country_base_influence_produces_add = 1
+    diplo_weight_economy_mult = 0.45
+	country_sr_zro_produces_mult = 0.25
+	pop_ethic_spiritualist_attraction_mult = 0.50
+	planet_pop_assemblers_upkeep_mult = 0.50
+	planet_pops_robotics_upkeep_mult = 0.50
+	planet_jobs_alloys_produces_mult = -0.10
+	planet_jobs_minerals_produces_mult = -0.10
+	planet_jobs_energy_produces_mult = -0.10
+	ship_evasion_mult = 0.40
+	ship_speed_mult = 0.40
+	country_naval_cap_mult = -0.75
+}
+
+great_sandworms_banned = {
+    diplo_weight_mult = -0.5
+}

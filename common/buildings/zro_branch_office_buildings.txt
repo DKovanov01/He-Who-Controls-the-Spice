@@ -1,0 +1,229 @@
+###########################
+# Branch Office Buildings #
+###########################
+
+## N.B.: ai_weight is still used for branch offices!
+
+#REGULAR MEGACORP#
+building_zro_smugglers_legit = {
+	base_buildtime = @b1_time
+	base_cap_amount = 3
+	icon = building_zro_harvester
+	
+	owner_type = corporate
+
+	potential = {
+		has_branch_office = yes
+		is_artificial = no
+		branch_office_owner = {
+			is_criminal_syndicate = no
+		}
+		NOR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_city
+		}
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+
+	planet_modifier = {
+		trade_value_add = 25
+		planet_crime_add = 10
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+			alloys = 100
+		}
+		produces = {
+			sr_zro = 2
+		}
+		upkeep = {
+			energy = 2
+			alloys = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 1500
+		modifier = {
+			factor = 3
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 10000
+				}
+			}
+		}
+	}
+}
+
+building_zro_allied_smuggler_sietch = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_primitive_dwellings
+	
+	owner_type = corporate
+
+	potential = {
+		has_branch_office = yes
+		is_artificial = no
+		branch_office_owner = {
+			is_criminal_syndicate = no
+		}
+		NOR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_city
+		}
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+
+	planet_modifier = {
+		planet_crime_add = 20
+		branch_office_value_mult = 0.20
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+			sr_zro = 4
+		}
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	ai_weight = {
+		weight = 1500
+		modifier = {
+			factor = 3
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 10000
+				}
+			}
+		}
+	}
+}
+
+## CRIME MEGACORP ##
+building_zro_smugglers = {
+	base_buildtime = @b1_time
+	base_cap_amount = 3
+	icon = building_zro_harvester
+	
+	owner_type = corporate
+
+	potential = {
+		has_branch_office = yes
+		is_artificial = no
+		branch_office_owner = {
+			is_criminal_syndicate = yes
+		}
+		NOR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_city
+		}
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+
+	planet_modifier = {
+		trade_value_add = 10
+		planet_crime_add = 30
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+			alloys = 100
+		}
+		produces = {
+			sr_zro = 3
+		}
+		upkeep = {
+			energy = 2
+			alloys = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 1500
+		modifier = {
+			factor = 3
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 10000
+				}
+			}
+		}
+	}
+}
+
+building_zro_smuggler_sietch = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	icon = building_primitive_dwellings
+
+	owner_type = corporate
+
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = { is_criminal_syndicate = yes }
+		OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_great_sandworm
+				}
+	}
+
+	planet_modifier = {
+		planet_crime_add = 60
+		branch_office_value_mult = 0.25
+		job_zro_harvester_add = -1
+	}
+
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		produces = {
+			sr_zro = 6
+		}
+		upkeep = {
+			energy = 3
+			alloys = 3
+		}
+	}
+
+	ai_weight = {
+		weight = 1500
+		modifier = {
+			factor = 3
+			branch_office_owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 10000
+				}
+			}
+		}
+	}
+}

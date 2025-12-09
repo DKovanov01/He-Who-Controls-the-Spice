@@ -1,0 +1,135 @@
+#Defensive armies can't transport of the planet
+#maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
+#morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
+#building spawned armies can't be built normally, but only created from pops working buildings
+
+#spawn_chance: only works on defensive armies; pop scope check that lets you give weights for what sort of army should be spawned
+#		Calculation is health * spawn_chance (default: 1), and it always picks the best one
+
+# Fremen Armies
+fedaykin_army = {
+	damage = 2.5
+	morale_damage = 2.5
+	health = 2.5
+	morale = 2.5
+	collateral_damage = 0.75
+	war_exhaustion = 5.0
+	time = 180
+	icon = GFX_army_type_gene_warrior
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 200
+			sr_zro = 0.2
+		}
+
+		upkeep = {
+			energy = 2.5
+			sr_zro = 0.2
+		}
+	}
+	
+	prerequisites = { "tech_fedaykin_army" }
+	potential_country = {
+		has_origin = origin_zro_worm 
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+	potential = {
+	    exists = owner
+	    from = {
+		    NOR = {
+			    has_trait = "trait_mechanical"
+			    has_trait = "trait_machine_unit"
+				is_sapient = no
+		    }
+	    }
+		owner = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_valid_civic = civic_machine_assimilator
+				has_origin = origin_zro_worm 
+			}
+		}
+	}
+	
+	ai_weight = {
+		base = 500
+		modifier = {
+			weight = 0
+			NOT = { has_technology = tech_fedaykin_army }
+		}
+		modifier = {
+			weight = 0
+			is_fallen_empire = yes
+		}
+	}
+	
+}
+
+# Defense Armies
+# Primitive Armies
+primitive_fedaykin_army = {
+    defensive = yes
+    is_pop_spawned = yes
+	damage = 3
+	health = 3
+	morale = 3
+	icon = GFX_army_type_primitive
+
+	potential_country = {
+	    AND = {
+	    is_primitive = yes
+		has_country_flag = fremen_primitives
+		}
+	}
+	
+	potential = {
+		owner = {
+			is_primitive = yes
+			has_country_flag = fremen_primitives
+	    }
+	}
+}
+
+# Defense Armies
+#defense_fedaykin_army = {
+#	defensive = yes
+#	is_pop_spawned = no
+#	health = 3
+#	damage = 3
+#	morale = 3
+#	collateral_damage = 0.0
+#	war_exhaustion = 0.0 # No WE from defense armies
+#	icon = GFX_army_type_defensive
+#
+#	resources = {
+#		category = armies
+#		produces = {
+#			trigger = {
+#				exists = owner
+#				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+#			}
+#			unity = 1
+#		}
+#	}
+#	
+#	potential = {
+#		from = {
+#			NOR = {
+#				has_trait = "trait_mechanical"
+#				has_trait = "trait_machine_unit"
+#				is_sapient = no
+#			}
+#		}
+#		owner = {
+#			is_primitive = no
+#			OR = {
+#				NOT = { has_authority = auth_machine_intelligence }
+#				NOT = { has_authority = auth_hive_mind }
+#				has_origin = origin_zro_worm
+#			}
+#		}
+#	}
+#
+#}

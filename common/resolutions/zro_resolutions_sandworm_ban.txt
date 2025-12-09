@@ -1,0 +1,182 @@
+@resolution_weight_hated = 3
+@resolution_weight_disliked = 4
+@resolution_weight_unpopular = 5
+@resolution_weight_normal = 6
+@resolution_weight_popular = 6.5
+@resolution_weight_loved = 7
+
+@resolution_cost_t1 = 100
+@resolution_cost_t2 = 150
+@resolution_cost_t3 = 200
+@resolution_cost_t4 = 250
+@resolution_cost_t5 = 300
+@resolution_cost_denounce = 25
+
+@resolution_flag_timer = 360
+
+resolution_sanctions_great_sandworm_ban = {
+	icon = "GFX_sanctions_red"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = 100
+		}
+	}
+
+	target = no
+	sanction = yes
+
+	effect = {
+		custom_tooltip = great_sandworm_ban_sanctions_effect
+		custom_tooltip = sanctions_effect
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_general days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = menu_galactic_community_disabled }
+	}
+
+	modifier = {
+	}
+
+	triggered_modifier = {
+		potential = {
+			has_relic = r_great_sandworm
+		}
+		modifier = {
+			great_sandworms_banned = 1
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "fail_text_empire_has_great_sandworm"
+			any_country = {
+				has_relic = r_great_sandworm
+			}
+		}
+		custom_tooltip = {
+			fail_text = "resolution_already_active"
+			NOR = {
+				is_active_resolution = "resolution_sanctions_great_sandworm_ban"
+			}
+		}
+	}
+
+	breach = {
+		has_relic = r_great_sandworm
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_normal
+
+		modifier = {
+			factor = 0
+			has_great_sandworm = no
+		}
+
+		modifier = {
+			factor = 0
+			any_federation_ally = {
+				has_great_sandworm = no
+			}
+		}
+
+		modifier = {
+			factor = 10.0
+			OR = {
+				any_rival_country = {
+					has_great_sandworm = yes
+				}
+				any_country = {
+					has_great_sandworm = yes
+					is_hostile = root
+				}
+			}
+		}
+	}
+}
+
+resolution_sanctions_great_sandworm_ban_repeal = {
+	icon = "GFX_repeal_red"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_denounce
+		}
+	}
+	target = no
+	sanction = yes
+
+	effect = {
+		custom_tooltip = resolution_sanctions_great_sandworm_ban_repeal_effect_success
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_general days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		is_active_resolution = "resolution_sanctions_great_sandworm_ban"
+	}
+
+	ai_weight = {
+		weight = @resolution_weight_unpopular
+
+		modifier = {
+			factor = 2
+			has_great_sandworm = yes
+		}
+
+		modifier = {
+			factor = 1
+			any_federation_ally = {
+				has_great_sandworm = yes
+			}
+		}
+
+		modifier = {
+			factor = -2
+			OR = {
+				any_rival_country = {
+					has_great_sandworm = yes
+				}
+				any_country = {
+					has_great_sandworm = yes
+					is_hostile = root
+				}
+			}
+		}
+	}
+}

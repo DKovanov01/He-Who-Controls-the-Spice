@@ -1,0 +1,16 @@
+namespace = my_zro_anomaly
+
+ANCREL_ZRO_WORM = {
+    id = my_zro_anomaly.1
+	title = "Shifting Sands"
+	desc = "This planet's sands seem to shift by themselves, without wind or storms..."
+	picture = "GFX_evt_desert"
+	should_ai_and_humans_use = yes
+	location = from
+	
+	level = 2
+	
+	max_once_global = yes
+    
+	on_success = zro_worm_event.1
+}

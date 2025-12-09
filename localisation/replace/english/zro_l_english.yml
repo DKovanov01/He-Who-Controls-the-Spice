@@ -1,0 +1,16 @@
+﻿l_english:
+ ####################################
+ # Misc
+ ####################################
+ sm_mercenary_garrison:0 "Spacing Guild Garrison"
+ sm_mercenary_garrison_desc:0 "A collection of barracks hosting military contractors. These grizzled veterans organise regular drills for the rest of the crew, and stand ready to defend the station - as long as we pay them.\n"
+ 
+ FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_HEADER:1 "Convert into Spacing Guild Enclave"
+ FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_DESCRIPTION:0 "$FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_CLICK$"
+ FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_CLICK:2 "This converts this fleet into a §YSpacing Guild Enclave.§! §RWe will lose control of the fleet.§!"
+ FLEET_VIEW_MERCENARY_ENCLAVE_CAPACITY_AVAILABLE:0 "$VALUE|Y$"
+ FLEET_VIEW_MERCENARY_ENCLAVE_CAPACITY_UNAVAILABLE:0 "$VALUE|R$"
+ FLEET_VIEW_MERCENARY_ENCLAVE_CAPACITY_DESCRIPTION:0 "Spacing Guild Capacity: $VALUE$"
+ FLEET_VIEW_MERCENARY_ENCLAVE_CAPACITY_VERBOSE:0 "§ESpacing Guild Enclaves§! can offer §HSpacing Guild fleets§! to serve empires for a limited time. §YSpacing Guild Capacity§! can be increased through §YCivics, Ascension Perks§! or §YGalactic Resolutions§!."
+ FLEET_VIEW_MERCENARY_ENCLAVE_UNFULFILLED_CONDITIONS:0 "§RUnfulfilled conditions:§!"
+

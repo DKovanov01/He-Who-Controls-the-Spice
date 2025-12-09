@@ -1,0 +1,477 @@
+@leader_unity_upkeep = 2
+@leader_sr_zro_upkeep = 2
+@leader_influence_upkeep = 2
+
+admiral = {
+	can_lead_navy = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+	category = leader_admirals
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_admiral_prescience
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_admiral_mentat
+			}
+		}
+	
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_admiral_kwisatz_haderach
+			}
+		}
+
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_admiral_terrible_presciense
+			}
+		}
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    NOT = {
+				    has_trait = leader_trait_admiral_prescience
+					has_trait = leader_trait_admiral_mentat
+					has_trait = leader_trait_admiral_kwisatz_haderach
+    			    has_trait = leader_trait_admiral_terrible_presciense
+				}
+			}
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_admiral_prescience
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_admiral_mentat
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			influence = @leader_influence_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_admiral_kwisatz_haderach
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_admiral_terrible_presciense
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    NOT = {
+					    has_trait = leader_trait_admiral_presciense
+						has_trait = leader_trait_admiral_mentat
+						has_trait = leader_trait_admiral_kwisatz_haderach
+				        has_trait = leader_trait_admiral_terrible_presciense
+					}
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+	}
+	default_category = admiral
+}
+
+general = {
+	can_lead_army = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_generals
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_general_prescience
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_general_mentat
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_general_kwisatz_haderach
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_general_terrible_presciense
+			}
+		}
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    NOT = {
+				    has_trait = leader_trait_general_prescience
+					has_trait = leader_trait_general_mentat
+					has_trait = leader_trait_general_kwisatz_haderach
+    			    has_trait = leader_trait_general_terrible_presciense
+				}
+			}
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_general_prescience
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_general_mentat
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			influence = @leader_influence_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_general_kwisatz_haderach
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_general_terrible_presciense
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    NOT = {
+					    has_trait = leader_trait_general_presciense
+						has_trait = leader_trait_general_mentat
+						has_trait = leader_trait_general_kwisatz_haderach
+				        has_trait = leader_trait_general_terrible_presciense
+					}
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+	}
+
+	default_category = general
+}
+
+scientist = {
+	can_research = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_scientists
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_scientist_prescience
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_scientist_mentat
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_scientist_kwisatz_haderach
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_scientist_terrible_presciense
+			}
+		}
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    NOT = {
+				    has_trait = leader_trait_scientist_prescience
+					has_trait = leader_trait_scientist_mentat
+					has_trait = leader_trait_scientist_kwisatz_haderach
+    			    has_trait = leader_trait_scientist_terrible_presciense
+				}
+			}
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_scientist_prescience
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+		}
+		
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_scientist_mentat
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			influence = @leader_influence_upkeep
+		}
+		
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_scientist_kwisatz_haderach
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+		
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_scientist_terrible_presciense
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    NOT = {
+					    has_trait = leader_trait_scientist_presciense
+						has_trait = leader_trait_scientist_mentat
+						has_trait = leader_trait_scientist_kwisatz_haderach
+				        has_trait = leader_trait_scientist_terrible_presciense
+					}
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+	}
+	default_category = scientist
+}
+
+governor = {
+	can_govern_planet = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_governors
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_governor_prescience
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_governor_mentat
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_governor_kwisatz_haderach
+			}
+		}
+		
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    has_trait = leader_trait_governor_terrible_presciense
+			}
+		}
+		cost = {
+			unity = 1
+			multiplier = owner.value:leader_cost
+			trigger = {
+			    NOT = {
+				    has_trait = leader_trait_governor_prescience
+					has_trait = leader_trait_governor_mentat
+					has_trait = leader_trait_governor_kwisatz_haderach
+    			    has_trait = leader_trait_governor_terrible_presciense
+				}
+			}
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_governor_prescience
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+		}
+		
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_governor_mentat
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			influence = @leader_influence_upkeep
+		}
+		
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_governor_kwisatz_haderach
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+		
+		upkeep = {
+			trigger = {
+			    AND = {
+				    has_trait = leader_trait_governor_terrible_presciense
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+			sr_zro = @leader_sr_zro_upkeep
+			influence = @leader_influence_upkeep
+		}
+		upkeep = {
+			trigger = {
+			    AND = {
+				    NOT = {
+					    has_trait = leader_trait_governor_presciense
+						has_trait = leader_trait_governor_mentat
+						has_trait = leader_trait_governor_kwisatz_haderach
+				        has_trait = leader_trait_governor_terrible_presciense
+					}
+					has_leader_upkeep = yes
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+		produces = {
+			trigger = {
+				is_idle = no
+				exists = owner
+				owner = {
+					has_valid_civic = civic_feudal_realm
+				}
+			}
+			unity = 1
+			multiplier = trigger:has_skill
+		}
+	}
+	default_category = governor
+}
+
+ruler = {
+	can_rule_empire = yes
+	max_trait_points = 2
+	can_have_traits = yes
+	default_category = ruler
+}
+
+envoy = {
+	can_be_envoy = yes
+	default_category = envoy
+	assignment_cooldown = 360
+	can_have_traits = no
+}

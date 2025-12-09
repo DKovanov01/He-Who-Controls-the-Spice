@@ -1,0 +1,133 @@
+# zro worm origin
+# home world
+
+d_zro_worm_home = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+		d_frozen_gas_lake
+	}
+
+	icon = d_zro_worm
+
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.25
+		planet_orbital_bombardment_damage = -0.2
+		job_underscore_zro_harvester_add = +1
+		job_underscore_zro_harvester_per_pop = 0.05 # 1 per 20
+	}
+
+	#resources = {
+	#	category = planet_deposits
+	#	upkeep = {
+	#		food = 4
+	#	}
+	#}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#great sandworm world
+d_zro_great_sandworm = {
+    is_for_colonizable = yes
+	category = deposit_cat_rare
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+		d_frozen_gas_lake
+	}
+
+	icon = d_searing_desert
+
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.10
+		job_underscore_zro_harvester_add = +1
+		job_sandtrout_caretaker_add = +1
+		pop_environment_tolerance = -0.35
+	}
+
+	#resources = {
+	#	category = planet_deposits
+	#	upkeep = {
+	#		food = 4
+	#	}
+	#}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+
+#colony
+d_zro_worm_colony = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_searing_desert
+
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.10
+		job_underscore_zro_harvester_add = +1
+		job_sandtrout_caretaker_add = +3
+		pop_environment_tolerance = -0.35
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_default
+		}
+	job_colonist_add = -2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			years_passed < 80
+			num_pops = 0
+		}
+		modifier = { planet_colony_development_speed_mult = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			#has_colony = yes
+			years_passed < 80
+			num_pops > 0
+			num_pops < 5
+		}
+		modifier = { pop_growth_speed = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			#has_colony = yes
+			years_passed < 80
+			num_pops > 4
+			num_pops < 9
+		}
+		modifier = { pop_growth_speed = 0.75 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			#has_colony = yes
+			years_passed < 80
+			num_pops > 8
+			num_pops < 11
+		}
+		modifier = { pop_growth_speed = 0.5 }
+	}
+
+	#resources = {
+	#	category = planet_deposits
+	#	upkeep = {
+	#		food = 4
+	#	}
+	#}
+
+	drop_weight = {
+		weight = 0
+	}
+}

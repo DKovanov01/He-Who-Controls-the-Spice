@@ -1,0 +1,16 @@
+version="1.2.1"
+tags={
+	"Buildings"
+	"Diplomacy"
+	"Economy"
+	"Gameplay"
+	"Leaders"
+	"Technologies"
+	"Overhaul"
+	"Military"
+	"Species"
+}
+name="He Who Controls the Spice: a Dune Inspired Overhaul"
+supported_version="3.5.2"
+path="D:/Paradox Interactive/Stellaris/mod/He Who Controls the Spice"
+remote_file_id="2811591064"

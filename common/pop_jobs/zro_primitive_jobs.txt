@@ -1,0 +1,51 @@
+###################
+# Primitive Jobs
+###################
+zro_primitive_soldier = {
+    category = specialist
+	is_capped_by_modifier = yes
+	building_icon = building_dread_encampment
+	clothes_texture_index = 2
+	icon = soldier
+
+    possible_pre_triggers = {
+		has_owner = yes
+		is_sapient = yes
+	}
+	
+	potential_country = {
+		is_primitive = yes
+	}
+
+	pop_modifier = {
+		pop_defense_armies_add = 5
+	}
+
+	weight = {
+		weight = @soldier_job_weight
+		modifier = {
+			factor = 2
+			has_trait = trait_resilient
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_limited_regeneration
+		}
+		modifier = {
+			factor = 0
+			species = { can_be_soldier = no }
+		}
+	}
+}

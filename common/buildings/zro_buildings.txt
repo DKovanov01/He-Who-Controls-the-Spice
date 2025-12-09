@@ -1,0 +1,278 @@
+building_zro_dispensery = {
+	base_buildtime = @b1_time
+	icon = building_zro_dispensery
+	base_cap_amount = 1
+
+	category = government
+
+	potential = {
+		exists = owner
+		planet = {
+			NOT = { has_modifier = slave_colony }
+		}
+		owner = { is_gestalt = no }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		NOT = { exists = owner }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_amenities_add = 5
+		job_administrator_add = +1
+		planet_jobs_unity_produces_mult = 0.1
+		planet_jobs__produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_sr_zro_produces_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+			sr_zro = 100
+		}
+		upkeep = {
+			energy = 3
+			sr_zro = 3
+		}
+	}
+	
+	prerequisites = {
+		"tech_building_zro_dispensery"
+	}
+
+	triggered_desc = {
+		text = zro_dispensery_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 10
+			owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value >= 3
+				}
+			}
+		}
+	}
+
+}
+
+building_zro_harvester_depot = {
+	base_buildtime = @b1_time
+	icon = building_zro_harvester
+	base_cap_amount = 2
+	
+	category = manufacturing
+
+	potential = {
+		planet = {
+		    OR = { 
+			    has_deposit = d_zro_worm_home
+				has_deposit = d_zro_worm_colony
+				has_deposit = d_zro_great_sandworm
+				}
+			NOT = { has_modifier = resort_colony }	
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+	    NOT = { exists = owner }
+		#exists = owner
+		#owner = {
+		#	has_monthly_income = {
+		#	resource = alloys
+		#	value < 0
+		#	}
+		#}
+	}
+
+	planet_modifier = {
+		job_underscore_zro_harvester_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_imperious_architecture
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			alloys = 50
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+	
+	prerequisites = {
+		tech_mine_zro
+	}
+
+	triggered_desc = {
+		text = zro_harvester_depot_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 10
+			num_buildings = {
+				type = building_zro_harvester_depot
+				value >= 1
+			}
+		}
+		modifier = {
+			factor = 8
+			num_buildings = {
+	    		type = building_zro_harvester_depot
+				value > 2
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = sr_zro
+					value < 100
+				}
+			}
+		}
+	}
+	
+	ai_resource_production = {
+		rare_crystals = 5
+		volatile_motes = 5
+		exotic_gases = 5
+		trigger = {
+			always = yes
+		}
+	}
+	
+}
+
+building_zro_arrakeen_palace = {
+    base_buildtime = @b2_time
+	planetary_ftl_inhibitor = yes
+	base_cap_amount = 1
+	can_demolish = no
+	can_be_disabled = no
+
+	category = army
+
+	potential = {
+	    planet = {
+			 has_deposit = d_zro_worm_home
+			 NOT = { has_modifier = slave_colony }
+			 NOT = { has_modifier = resort_colony }	
+		}
+	}
+
+	destroy_trigger = {
+	    NOT = { exists = owner }
+	    #exists = owner
+		#owner = { is_ai = no }
+		#AND = {
+		#	num_buildings = { type = building_stronghold value > 1 }
+		#	owner = {
+		#		is_at_war = no # don't destroy while at war
+		#	}
+		#}
+	}
+	
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -10
+	}
+
+	army_modifier = {
+		army_starting_experience_add = 10000
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+		    planet_housing_add = 30
+			planet_amenities_add = 40
+			job_noble_add = 1
+			job_politician_add = 2
+			job_executive_add = 3
+			job_merchant_add = 3
+			job_high_priest_add = 3
+			job_head_researcher_add = 3
+		    job_enforcer_add = 5
+			job_zro_soldier_add = 10
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2000
+			alloys = 5000
+			sr_zro = 20000
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			sr_zro = 10
+		}
+	}
+	
+	ai_resource_production = {
+		rare_crystals = 10
+		volatile_motes = 10
+		exotic_gases = 10
+		trigger = {
+			always = yes
+		}
+		
+	}
+	
+		ai_weight = {
+			weight = 10
+		}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_zro_soldier_effect_desc
+	}
+	
+}

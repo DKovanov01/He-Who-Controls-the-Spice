@@ -1,0 +1,20 @@
+﻿l_english:
+
+ d_zro_deposit_1:1 "Spice discovered"
+ d_zro_deposit_1_desc:0 "Spice dust radiates a powerful psionic presence."
+ d_zro_deposit_2_desc:0 "$d_zro_deposit_1_desc$"
+ d_zro_deposit_3_desc:0 "$d_zro_deposit_1_desc$"
+ d_zro_deposit_4_desc:0 "$d_zro_deposit_1_desc$"
+ d_zro_deposit_5_desc:0 "$d_zro_deposit_1_desc$"
+ 
+ d_zro_deposit_2:0 "$d_zro_deposit_1$"
+
+ d_zro_deposit_3:0 "$d_zro_deposit_1$"
+ d_zro_deposit_4:0 "Spice"
+ d_zro_deposit_5:0 "Spice"
+ 
+ action.92.zro:1 "During its survey of [From.GetName], the [Root.GetName] discovered a previously unknown strategic resource dubbed §HSpice§!. It is an extremely rare aerosol of exotic particles that appears to have been deposited here through a meteor impact, but its true origin is a mystery. If ingested by psionically-gifted individuals, this aerosol should act as a very potent (and potentially addictive) drug that enhances PSI abilities."
+ 
+ distar.305.zro:0 "The [Root.GetName] has discovered a previously unknown strategic resource on [FromFrom.GetName], dubbed §HSpice§!. It is an extremely rare aerosol of exotic particles that appears to have been deposited here through a meteor impact, but its true origin is a mystery. If ingested by psionically-gifted individuals, this aerosol should act as a very potent (and potentially addictive) drug that enhances PSI abilities."
+
+ action.92.zro.tooltip:1 "£sr_zro£§Y$sr_zro$§!\n§E$sr_zro_desc$§!"

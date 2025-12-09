@@ -1,0 +1,14 @@
+# Resolution Categories for Custodians and Galactic Emperors
+
+resolution_category_emperor_imperial_tax_sr_zro = {
+	group = galactic_empire
+	icon = "GFX_resolution_imperial_trade_company"
+	multiple_active_resolutions = yes
+	resolution_types = {
+		"resolution_emperor_sr_zro_1"
+		"resolution_emperor_sr_zro_2"
+		"resolution_emperor_sr_zro_3"
+		"resolution_emperor_sr_zro_4"
+		"resolution_emperor_sr_zro_5"
+	}
+}

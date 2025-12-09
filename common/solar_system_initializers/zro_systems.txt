@@ -1,0 +1,216 @@
+@jumps = 3
+@asteroid_min_size = 6
+@asteroid_max_size = 9
+@base_moon_distance = 10
+@molten_world_min_size = 10
+@molten_world_max_size = 16
+
+# Zro worm
+zro_worm_start = {
+	class = "sc_f"
+	flags = { empire_home_system }
+	usage = origin
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 110
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 300
+	}
+	init_effect = {
+	generate_home_system_resources = yes
+	}
+	#	every_neighbor_system = { set_star_flag = empire_cluster }
+	#	generate_home_system_resources = yes
+	#	if = {
+	#		limit = {
+	#			is_inside_nebula = no
+	#		}
+	#		create_nebula = {
+	#			radius = 25
+	#		}
+	#		set_star_flag = ocean_paradise_nebula
+	#	}
+	#}
+
+	# Star
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+		has_ring = no
+		#init_effect = {
+		#	clear_deposits = yes
+		#	add_deposit = d_physics_5
+		#}
+	}
+
+	# Asteroids
+	change_orbit = 110
+	planet = {
+		count = { min = 1 max = 2 }
+		class = pc_asteroid
+		orbit_distance = 0
+		init_effect = {
+			clear_deposits = yes
+		}
+		orbit_angle = { min = 1 max = 120 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+	}
+	planet = {
+		count = { min = 1 max = 2 }
+		class = pc_asteroid
+		orbit_distance = 0
+		init_effect = {
+			clear_deposits = yes
+		}
+		orbit_angle = { min = 120 max = 270 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+	}
+
+	# Nearby Terraforming Canditate Barren World
+	planet = {
+		class = pc_barren
+		orbit_angle = 125
+		orbit_distance = 75
+		has_ring = no
+		init_effect = {
+			clear_deposits = yes
+			if = {
+			limit = { num_guaranteed_colonies >= 1 }
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			}
+		}
+		size = { min = 13 max = 20 }
+		change_orbit = 12
+		moon = {
+            count = { min = 1 max = 2 }
+            class = pc_molten
+            orbit_distance = 0
+            size = 8
+            orbit_angle = { min = 90 max = 270 }
+        }
+	}
+
+	# Nearby Molten World
+	planet = {
+		class = pc_molten
+		orbit_angle = 27
+		orbit_distance = 75
+		modifiers = none
+		size = @molten_world_min_size
+		#init_effect = {
+		#	clear_deposits = yes
+		#	add_deposit = d_minerals_8
+		#}
+	}
+
+
+	# Nearby Terraforming Canditate Barren World
+	planet = {
+		class = pc_barren
+		orbit_angle = 70
+		orbit_distance = 75
+		has_ring = no
+		init_effect = {
+		clear_deposits = yes
+			if = {
+			limit = { num_guaranteed_colonies >= 2 }
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			}
+		}
+		size = { min = 13 max = 20 }
+	}
+
+	# Homeworld
+	change_orbit = 75
+	planet = {
+		class = "pc_desert"
+		orbit_angle = 177
+		orbit_distance = 0
+		size = 30
+		#entity = "zro_worm_planet_01_entity"
+		modifiers = none
+		starting_planet = yes
+		flags = { ignore_startup_effect }
+		has_ring = no
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		change_orbit = 15
+
+
+        moon = {
+		    name = "Hand of God"
+            count = 1
+            class = pc_barren
+            orbit_distance = 0
+            size = 14
+            orbit_angle = { min = 90 max = 270 }
+        }
+	}
+
+	# Brown Dwarf Star / Gas Giant i guess :(
+	planet = {
+		class = pc_gas_giant
+		orbit_distance = 75
+		orbit_angle = 148
+		size = 19
+		has_ring = yes
+		#init_effect = {
+		#	clear_deposits = yes
+		#	add_deposit = d_energy_8
+		#}
+
+		change_orbit = 15
+		moon = {
+            count = { min = 1 max = 2 }
+            class = pc_barren
+            orbit_distance = 0
+            size = 8
+            orbit_angle = { min = 90 max = 270 }
+        }
+        change_orbit = 10
+        moon = {
+            count = { min = 1 max = 2 }
+            class = pc_barren_cold
+            orbit_distance = 0
+            size = 12
+            orbit_angle = { min = 90 max = 270 }
+        }
+	}
+
+	# Asteroids
+	change_orbit = 300
+	planet = {
+		count = 8
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+		init_effect = {
+		clear_deposits = yes
+		}
+	}
+
+	# Guaranteed habitables - turned into Frozen Worlds in aquatics.1001
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t2_second_colony"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1_first_colony"
+	}
+}

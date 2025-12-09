@@ -1,0 +1,8 @@
+﻿l_english:
+ ####################################
+ # Triggers
+ ####################################
+ ENCLAVE_CAPACITY_LEFT_TRIGGER:0 "Spacing Guild Enclave Capacity is $COMPARATOR$ $NUM|Y$."
+
+ GET_TRADE_DATA_EFFECT_HIRE_FLEET:2 "Pay $PRICE|Y$ to hire a £military_ship£§RSpacing Guild Fleet (£military_power£$POWER$)§! for £time£$DAYS|G$ days.\n\n$opinion15$"
+ 

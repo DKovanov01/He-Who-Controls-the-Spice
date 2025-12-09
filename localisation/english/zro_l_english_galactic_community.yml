@@ -1,0 +1,75 @@
+﻿l_english:
+
+zro_tax:0 "Spice Tax"
+
+spacing_guild: "Spacing Guild"
+
+resolution_category_emperor_imperial_tax_sr_zro:0 "Monopolize Space Travel"
+mod_country_galactic_standard_sr_zro_produces_add:1 "Monthly £sr_zros£ Spice"
+mod_country_sr_zro_produces_mult:1 "£sr_zro£ Monthly Spice"
+mod_planet_jobs_sr_zro_produces_mult:1 "£sr_zro£ Spice from £pop£ Jobs"
+
+opinion_taxes:1 "Monopolized Space Travel"
+RESOURCE_NOT_ON_MARKET:0 "$TRIGGER_FAIL$This resource needs to be available in the Galactic Market."
+tax_resolution_1_opinion:0 "Every imperium member's £opinion£ §YOpinion§! decreased by §R-2§!"
+tax_resolution_2_opinion:0 "Every imperium member's £opinion£ §YOpinion§! decreased by §R-5§!"
+tax_resolution_3_opinion:0 "Every imperium member's £opinion£ §YOpinion§! decreased by §R-10§!"
+tax_resolution_4_opinion:0 "Every imperium member's £opinion£ §YOpinion§! decreased by §R-20§!"
+
+resolution_emperor_sr_zro_1:0 "Exempt Spice Tax"
+resolution_emperor_sr_zro_1_desc:0 "Empire members are not obligated to pay Spice."
+resolution_emperor_sr_zro_2:0 "Low Spice Tax"
+resolution_emperor_sr_zro_2_desc:0 "This substance, which opens one's mind to mystical psychic powers, must be paid as a small tribute to the Emperor."
+resolution_emperor_sr_zro_3:0 "Medium Spice Tax"
+resolution_emperor_sr_zro_3_desc:0 "For the needs of the empire, the tax rate should be further increased."
+resolution_emperor_sr_zro_4:0 "High Spice Tax"
+resolution_emperor_sr_zro_4_desc:0 "Due to the Emperor's effort to monopolize both war and space travel, Spice tax should be increased further."
+resolution_emperor_sr_zro_5:0 "Massive Spice Tax"
+resolution_emperor_sr_zro_5_desc:0 "He who controls the Spice..."
+
+resolution_category_spacing_guild:0 "The §YSpacing Guild§!"
+resolution_category_arrakis_recreation:0 "§YArrakis Recreation§!"
+
+resolution_sanctions_great_sandworm_ban: "Ban on Posession of Arrakis Sandworms"
+resolution_sanctions_great_sandworm_ban_desc: ""
+
+fail_text_empire_has_great_sandworm:0 "Any empire in posession of the Maker"
+
+resolution_sanctions_great_sandworm_ban_repeal: "Repeal ban on Posession of Arrakis Sandworms"
+resolution_sanctions_great_sandworm_ban_repeal_desc: ""
+
+great_sandworm_ban_sanctions_effect: "Empires in posession of §YThe Maker§! will be in breach of galatic law and will be subject to diplomatic penalties.\n\n"
+
+resolution_sanctions_great_sandworm_ban_repeal_effect_success: "Empires in posession of §YThe Maker§! will no longer be in breach of galatic law and will not be subject to diplomatic penalties.\n\n"
+
+great_sandworms_banned: "Arrakis Sandworms Sanctions"
+
+resolution_spacing_guild_establishment: "Establish the Spacing Guild"
+resolution_spacing_guild_establishment_tooltip: "Establis the Spacing Guild to assist with interstellar travel."
+resolution_spacing_guild_establishment_desc: "In exchange for discouraging advancments of AI and robotics technology, the §YSpacing Guild§! has agreed to provide the Galactic Community members with resources and technology necessary to sustain their §HGuild Navigators§! and improve ship designs for better and faster navigation among the stars."
+
+resolution_spacing_guild_fees: "Spacing Guild Fees"
+resolution_spacing_guild_fees_tooltip: "Provide the Spacing Guild its requested fee."
+resolution_spacing_guild_fees_desc: "The §YSpacing Guild§! is willing to provide greater assistance in interstellar travel in exchange for an established fee for their services."
+
+resolution_space_travel_monopolization: "Monopolize Space Travel"
+resolution_space_travel_monopolization_tooltip: "Allow the Spacing Guild a monopoly on interstellar travel."
+resolution_space_travel_monopolization_desc: "The §YSpacing Guild§! wishes to establish itself as the main provider of interstellar travel services exchange for improvements to §HSpice§! industry and overall production."
+
+resolution_spice_industry_monopolization: "Monopolize Spice Production"
+resolution_spice_industry_monopolization_tooltip: "Monopolize Spice production to secure the Spacing Guild's position and services."
+resolution_spice_industry_monopolization_desc: "Having established itself as the main provider of interstellar travel, the §YSpacing Guild§! now wishes to establish fees on production of §HSpice§! to better secure its position."
+
+resolution_full_spice_industry_monopoly: "Complete Spice Monopoly"
+resolution_full_spice_industry_monopoly_tooltip: "Empires in control of §YArrakis§! or similar worlds used for the production of §HSpice§! will have the §Rnegative§! spice production of the previous resolution reversed to §Gpositive§!, as well as gain 1 £influence£ in place of increased crime.\n\n"
+resolution_full_spice_industry_monopoly_desc: "In exchange to §YSpacing Guild§! remaining in power, Empires in control of §HSpice§! production will re-negotiate and negate their §RSpice tax§! to ensure their sovereignty."
+
+country_sr_zro_produces_mult: "Empire Spice production multiplier"
+planet_jobs_sr_zro_produces_mult: "Planetary Spice production multiplier"
+
+
+
+
+
+
+

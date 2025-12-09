@@ -1,0 +1,8 @@
+﻿l_english:
+ 
+ # RELICS
+
+ r_great_sandworm: "The Maker"
+ r_great_sandworm_desc: "A sandworm that has been smuggled off of Arrakis, this giant creature is somehow tied to creation of Spice, can be used to terraform planets into desert worlds similar to that of its original home."
+ relic_great_sandworm_active_tooltip: "Enables a planetary decision that allows terafforming any planets into §YDesert§! worlds with environment similar to that of Arrakis."
+

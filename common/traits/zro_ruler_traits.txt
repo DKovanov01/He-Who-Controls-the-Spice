@@ -1,0 +1,146 @@
+# species_potential_add = {}
+# show the trait to add to species when genemodding or randomizing traits.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+# species_possible_remove = {}
+# allow to remove the trait when genemodding.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+#Prescience Ruler Trait
+trait_ruler_prescience = {
+	cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/trait_prescience.dds"
+	self_modifier = {
+	    
+		leader_exp_gain_mult = 0.25
+		ruler_skill_levels = 2
+	}
+	modifier = {
+        pop_happiness = 0.10
+		country_edict_fund_add = 20
+		edicts_upkeep_mult = -0.10
+		country_ruler_influence_produces_add = 0.5
+		leader_skill_levels = 1
+		species_leader_exp_gain = 0.20
+		army_morale = 0.20
+		country_unity_produces_mult = 0.20
+		pop_government_ethic_attraction = 0.10
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	prerequisites = { tech_prescience }
+	opposites = { "leader_trait_ruler_cyborg" "leader_trait_ruler_synthetic" "trait_ruler_terrible_prescience" "trait_ruler_kwisatz_haderach" }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#Mentat Ruler Trait
+trait_ruler_mentat = {
+	cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/trait_mentat.dds"
+	self_modifier = {
+		leader_exp_gain_mult = 0.50
+		ruler_skill_levels = 3
+	}
+	modifier = {
+		leader_skill_levels = 2
+		species_leader_exp_gain = 0.25
+		ship_corvette_cost_mult = -0.2
+		ship_destroyer_cost_mult = -0.2
+		ship_cruiser_cost_mult = -0.2
+		ship_battleship_cost_mult = -0.2
+		ship_titan_cost_mult = -0.2
+		armies_cost_mult = -0.2
+		army_experience_gain_mult = 0.33
+		starbase_upgrade_cost_mult = -0.10
+		ships_upkeep_mult = -0.05
+		armies_upkeep_mult = -0.1
+		country_ship_upgrade_cost_mult = -0.1
+		planet_buildings_cost_mult = -0.1
+		planet_districts_cost_mult = -0.1
+		ship_colonizer_cost_mult = -0.35
+		planet_colony_development_speed_mult = 0.25
+		starbase_modules_cost_mult = -0.2
+		starbase_upgrade_cost_mult = -0.10
+		trade_value_mult = 0.10
+		all_technology_research_speed = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	prerequisites = { tech_mentat }
+	opposites = { "leader_trait_ruler_cyborg" "leader_trait_ruler_synthetic" }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+######################
+
+#Terrible prescient visions
+#trait_ruler_terrible_prescience = {
+#	cost = 1
+#    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
+#	self_modifier = {
+#	    
+#		leader_exp_gain_mult = -0.25
+#		ruler_skill_levels = -2
+#	}
+#	modifier = {
+#        pop_happiness = -0.25
+#		edicts_upkeep_mult = +0.25
+#		country_ruler_influence_produces_add = -2
+#		leader_skill_levels = -2
+#		species_leader_exp_gain = -0.50
+#		army_morale = -0.50
+#		country_unity_produces_mult = -0.50
+#		pop_government_ethic_attraction = -0.25
+#	}
+#	leader_trait = { ruler }
+#	leader_class = { ruler }
+#	prerequisites = { tech_prescience }
+#	opposites = { "leader_trait_ruler_cyborg" "leader_trait_ruler_synthetic" "trait_ruler_prescience" "trait_ruler_kwisatz_haderach" }
+#
+#	ai_weight = {
+#		weight = 0
+#	}
+#}
+
+#Kwisatz Haderach Ruler Trait
+#trait_ruler_kwisatz_haderach = {
+#	cost = 1
+#    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
+#	self_modifier = {
+ #      
+#		leader_exp_gain_mult = 1
+#		ruler_skill_levels = 5
+#		leaders_upkeep_mult = -0.50
+#	}
+#	modifier = {
+ #      pop_happiness = 0.25
+	#	country_edict_fund_add = 50
+#		edicts_upkeep_mult = -0.25
+#		country_ruler_influence_produces_add = 5
+#		leader_skill_levels = 4
+#		species_leader_exp_gain = 0.50
+#		army_morale = 1
+#		country_unity_produces_mult = 1
+#		pop_government_ethic_attraction = 1
+#		army_experience_gain_mult = 1
+#		planet_colony_development_speed_mult = 0.5
+#		trade_value_mult = 0.25
+#		all_technology_research_speed = 0.50
+#	}
+#	leader_trait = { ruler }
+#	leader_class = { ruler }
+#	prerequisites = { tech_prescience }
+#	opposites = { "leader_trait_ruler_cyborg" "leader_trait_ruler_synthetic" "trait_ruler_prescience" "trait_ruler_terrible_prescience" }
+#
+#	ai_weight = {
+#		weight = 0
+#	}
+#}

@@ -1,0 +1,240 @@
+############################
+#
+# Pop Events
+#
+# Original written by Henrik Thyrwall
+#
+# Modified by Mr_Jessy
+#
+############################
+
+################
+# GIVES A FEW POPS: EITHER ONE TRAIT OR THE OTHER #
+################
+
+namespace = zro_worm
+
+### Pop Spice Dependency
+pop_event = {
+	id = zro_worm.15
+	title = "The Spice Must Flow"
+	desc = "The presense of an active Spice Dispensery on the planet has allowed the population easy access to Spice Melange. Having consumed it in the span of the last few years, some can no longer live without this mysterious substance."
+	picture = GFX_evt_cybernetics
+	
+	trigger = { 
+	    exists = owner
+		is_exact_same_species = owner
+		is_enslaved = no
+		is_being_purged = no
+		is_robot_pop = no
+		NOR = {
+		    has_trait = trait_desertic
+			has_trait = trait_zroic
+			has_trait = trait_zroadd
+		} 
+		planet = {
+		    NOT = { is_planet_class = pc_hive is_planet_class = pc_machine }
+		    has_owner = yes
+			OR = {
+		    has_active_building = building_zro_dispensery 
+			has_active_building = building_zro_harvester_depot
+			}
+			owner = {
+			    is_country_type = default
+				NOT = { has_country_flag = pop_modification }
+				}
+		 count_owned_pop = {
+			limit = {
+				is_enslaved = no
+				is_being_purged = no
+			}
+			count >= 3
+		 }
+		}
+	}
+	
+	mean_time_to_happen = { months = 24	}
+	
+	fire_only_once = no
+
+	immediate = {
+        
+		random_list = {
+		 50 = {
+		  planet = {
+			 owner = { set_country_flag = pop_modification }
+			 set_planet_flag = pop_modification
+			 create_species = {
+				is_mod = yes
+				name = this
+				plural = this
+				class = this
+				portrait = this
+				traits = this
+			 }
+			 modify_species = {
+			  species = last_created_species
+			  add_trait = trait_zroic
+			 }
+			 
+		  }
+		 }
+		 50 = {
+		  planet = {
+			 owner = { set_country_flag = pop_modification }
+			 set_planet_flag = pop_modification
+			 create_species = {
+				is_mod = yes
+				name = this
+				plural = this
+				class = this
+				portrait = this
+				traits = this
+				}
+			 modify_species = {
+			  species = last_created_species
+			  add_trait = trait_zroadd
+			 }
+		     }
+		    }
+	     }
+		
+		if = {
+			limit = {
+				planet = {
+					count_owned_pop = {
+						limit = {
+							is_same_species = ROOT
+						}
+						count < 6
+					}
+				}
+			}
+			planet = {
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+				every_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					set_pop_flag = non_modified_zro_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						is_pop = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				planet = {
+					count_owned_pop = {
+						limit = {
+							is_same_species = ROOT
+						}
+						count > 6
+					}
+				}
+			}
+			planet = {
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					change_species = last_created_species
+					set_pop_flag = modified_zro_pop_1
+				}
+				every_owned_pop = {
+					limit = {
+						NOT = { is_pop = ROOT }
+						is_same_species = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					set_pop_flag = non_modified_zro_pop_1
+				}
+				random_owned_pop = {
+					limit = {
+						is_pop = ROOT
+						is_enslaved = no
+						is_being_purged = no
+						is_robot_pop = no
+					}
+					set_pop_flag = modified_zro_pop_1
+					change_species = last_created_species
+				}
+			}
+		}
+	}
+	option = {
+		name = "The Spice must flow..."
+	}
+}

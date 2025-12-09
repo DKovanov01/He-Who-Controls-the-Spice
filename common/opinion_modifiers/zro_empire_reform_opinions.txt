@@ -1,0 +1,36 @@
+opinion_taxes = {
+	trigger = {
+		is_galactic_community_member = yes
+	}
+	opinion = {
+		base = 0
+		modifier = {
+			add = -2
+			FROM = { 
+			is_galactic_emperor = yes 
+			}
+			is_active_resolution = resolution_emperor_sr_zro_2
+		}
+		modifier = {
+			add = -5
+			FROM = { 
+			is_galactic_emperor = yes 
+			}
+			is_active_resolution = resolution_emperor_sr_zro_3
+		}
+		modifier = {
+			add = -10
+			FROM = { 
+			is_galactic_emperor = yes 
+			}
+			is_active_resolution = resolution_emperor_sr_zro_4
+		}
+		modifier = {
+			add = -20
+			FROM = { 
+			is_galactic_emperor = yes 
+			}
+			is_active_resolution = resolution_emperor_sr_zro_5
+		}
+	}
+}

@@ -1,0 +1,278 @@
+﻿l_english:
+
+
+
+# RESOURCE
+sr_zro:0 "Spice"
+sr_zro_desc:0 "An extremely rare aerosol of exotic particles. It has been deposited on a number of worlds through meteor impacts, but its true origin is a mystery. If ingested by psionically-gifted individuals, Spice acts as a very potent (and addictive) drug that enhances PSI abilities."
+
+# TRAITS
+
+trait_desertic:0 "Fremen"
+trait_desertic_desc:0 "§LThis species has originated on a Desert World that is full of great dangers and happenes to be the biggest source of Spice in the galaxy. The environment along with their culture and customs have turned the natives into the best warriors and survivors in the galaxy, and their constant consumption and reliance on Spice grants them great health benefits."
+trait_desertic_tooltip:1 "£consumer_goods£ Pop Consumer Goods Upkeep on §YDesert§! worlds: §G-30%§!\n£unity£Unity production from £job£Jobs on §Ydesert§! worlds: §G+15%§!\n£consumer_goods£ Pop Consumer Goods Upkeep on non-§YDry§! worlds: §R+30%§!\nWorker Pop output on non-§YDry§! worlds: §R-10%§!\nHabitability on non-§YDry§! worlds §R-20%§!\n\n§YHappiness§!, §YUnity§! and §YGrowth§! §RPenalty§! can be §GNegated§! through a planetary decision that requires £sr_zro£ Spice, as well as through the construction of §YSpice Dispensaries§!.":
+
+trait_zroic:0 "Accustomed to Spice"
+trait_zroic_desc:0 "The individuals of this species has taken well to consumption of Spice, and thus are benefiting from it. However, they suffer from withdrawal should they not have a constant supply of Spice. §YHappiness§!, §YUnity§! and §YGrowth§! §RPenalty§! can be §GNegated§! through the construction of §YSpice Dispensaries§!."
+trait_zroic_tooltip:1 ""
+
+trait_zroadd:0 "Addicted to Spice"
+trait_zroadd_desc:0 "The individuals of this species has become helplessly addicted to Spice. While they feel certain benefits, the need to consume the substance has started affecting their everyday life in a negative way. They suffer from severe withdrawal should they not have a constant supply of Spice. §YHappiness§!, §YUnity§! and §YGrowth§! §RPenalty§! can be §GNegated§! through the construction of §YSpice Dispensaries§!."
+trait_zroadd_tooltip:1 ""
+
+# ORIGIN
+
+d_zro_worm_home:0 "The Great Sandworm"
+d_zro_worm_home_desc:0 "The dunes of this planet are inhabited by giant Sandworms. Worshipped by the local population, they attack and consume everything in their path."
+
+origin_zro_worm:0 "Children of the Dunes"
+origin_zro_worm_desc:0 "For generations this species has lived on the world they've come to call Dune, a dangerous Desert World full of massive Sandworms. Learning to survive and co-exist with the creatures, the Fremen have managed to harvest Spice - a mysterious substance that prolongs life, grants enormous health benefits and powerful psionic abilities." 
+START_SCREEN_ZRO_WORM:1 "We [GetSpeciesName] have come to call the dunes of [GetHomeWorldName] our home. For thousands of years we have co-existed with the Sandworms that inhabit the desert, as we learned to harness the power Spice - these holy creatures' greatest gift.\n\n After millenia of fighting the fellow tribes of our homeworld, we have finally united under a single great leader who has promised us the stars. The time has come to conquer the universe. $START_SCREEN_ZRO_WORM_END$":
+
+zro_worm_start_NAME:0 "Sandworm System"
+zro_worm_start_DESC:0 "The starting system of Children of the Dunes Origin."
+origin_zro_worm_effects:0 "- Start with §HThe Great Sandworm§! as a planetary feature on your homeworld, providing Jobs that produce £sr_zro£ Spice.\n- Main Species gain §HFremen§! Trait. Lowering happiness, increasing production on §YDesert§! planets and decreasing production on non-§YDry§! planets.\n- Unique Leader Traits and early Psionic Techs."
+
+# BUILDINGS
+
+tech_building_zro_dispensery: "Spice Dispensery"
+tech_building_zro_dispensery_desc: "Allows the construction of a Spice Dispensery - a building that would give the population of a planet easy access to Spice Melange."
+tech_building_zro_dispensery_tooltip: ""
+
+tech_building_zro_harvester_depot: "Spice Harvester Depot"
+tech_building_zro_harvester_depot_desc: "Allows the construction of a Spice Harvester Depot, which would send out harvesters to collect the Spice on Arrakis-like worlds."
+tech_building_zro_harvester_depot_tooltip: ""
+
+building_zro_harvester_depot:0 "Spice Harvester Depot"
+building_zro_harvester_depot_desc:0 "Houses a single harvester that goes out into the desert to mine Spice"
+zro_harvester_depot_effect_desc:0 "Deploys harvesters into the deep desert to harvest §HSpice§!. Harvesters require §YAlloys§! for upkeep."
+
+building_zro_dispensery:0 "Spice Dispensery"
+building_zro_dispensery_desc:0 "Enscrybed by myths and tales of the Great Sandworm, this bureacratic building provides the population with much needed Spice, which is required for some people to sustain a healthy life, in conjuction grows small farms of Sandtrout to study and showcase."
+zro_dispensery_effect_desc:0 "Provides §HSpice§! to the population, §GNegating§! the §YHappiness§!, §YProduction§! and §YGrowth§! penalties."
+
+building_zro_smugglers_legit:0 "Allied Spice Smugglers"
+building_zro_smugglers_legit_desc:0 "Allied Spice Smugglers - they share some of their smuggled Spice"
+building_zro_smugglers_legit_effect_desc: "Shares smuggled §GSpice§!"
+
+building_zro_smugglers:0 "Spice Smugglers"
+building_zro_smugglers_desc:0 "Spice Smugglers - they smuggle Spice"
+building_zro_smugglers_effect_desc: "Smuggle §GSpice§!"
+
+building_zro_smuggler_sietch: "Smuggler Sietch"
+building_zro_smuggler_sietch_desc: "A sietch where Spice smugglers hide and operate from"
+building_zro_smuggler_sietch_effect_desc: "Smuggles §GZro§!"
+
+building_zro_allied_smuggler_sietch: "Allies Smuggler Sietch"
+building_zro_allied_smuggler_sietch_desc: "An allied sietch where where Spice smugglers hide and operate from"
+building_zro_allied_smuggler_sietch_effect_desc: "Smuggles §GZro§!"
+
+building_zro_arrakeen_palace: "Arrakeen Palace"
+building_zro_arrakeen_palace_desc: "The single most colossal structure on Dune, this palace is the symbol of power in the galaxy - the place where only the richest beings would reside in and rule from."
+
+building_arrakeen_capital: "Arrakeen"
+building_arrakeen_capital_desc: "The capital city of Arrakis, surrounded by a shield wall that keeps it safe from storms and sandworms."
+
+zro_soldier: "Fedaykin"
+zro_soldier_desc: "The Fremen's guerrilla fighters and death commandos, these soldiers are the best fighters in the galaxy."
+
+defense_fedaykin_army: "Fedaykin"
+defense_fedaykin_army_desc: "The Fremen's guerrilla fighters and death commandos, these soldiers are the best fighters in the galaxy."
+
+mod_job_zro_primitive_soldier_add: "Primitive Fedaykin"
+job_zro_primitive_soldier: "Primitive Fedaykin"
+job_zro_primitive_soldier_desc: "The Fremen's guerrilla fighters and death commandos, these soldiers are the best fighters in the galaxy."
+
+mod_job_zro_soldier_add:0 "Fedaykin"
+job_zro_soldier:0 "Fedaykin"
+job_zro_soldier_plural:0 "Fedaykin"
+job_zro_soldier_desc:1 "The Fremen's guerrilla fighters and death commandos, these soldiers are the best fighters in the galaxy."
+job_zro_soldier_effect_desc: "£job_soldier£ $job_zro_soldier_plural$ increase £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§! and spawn £defense_army£ §YFedaykin Armies§!"
+
+# JOBS
+
+job_underscore_zro_harvester:0 "Spice Harvester"
+job_underscore_zro_harvester_desc:0 "These brave individuals are dropped off in their massive harvesters, collecting any Spice from the deposits they find, before being quickly picked up by a carryall and escaping incoming worms."
+job_underscore_zro_harvester_plural:0 "Spice Harvesters"
+
+mod_job_underscore_zro_harvester_add:0 "Spice Harvester Jobs"
+mod_job_underscore_zro_harvester_per_pop:0 "Spice Harvester Jobs §G+1§! every §Y20§! pops"
+mod_job_underscore_zro_harvester_per_pop_short:0 "Spice Harvester Jobs §G+1§! every §Y20§! pops"
+
+job_sandtrout_caretaker:0 "Sandtrout Caretaker"
+job_sandtrout_caretaker_desc:0 "The people who look after the young Sandtrouts helping them to mature, although they will not see them fully grown in their lifetime. They will help the planet to be covered in sand for now."
+job_sandtrout_caretaker_plural:0 "Sandtrout Caretakers"
+mod_job_sandtrout_caretaker_add:0 "Sandtrout Caretaker Jobs"
+
+overlord_zro_harvester: "Overlord's Spice Harvester"
+overlord_zro_harvester_desc: "These brave individuals are dropped off in their massive harvesters, collecting any Spice from the deposits they find, before being quickly picked up by a carryall and escaping incoming worms."
+overlord_zro_harvester_plural: "Overlord's Spice Harvesters"
+
+mod_job_overlord_zro_harvester_add: "Overlord's Spice Harvester"
+
+# DECISIONS
+
+decision_planet_luxuries_boost_zro:0 "Provide Spice"
+decision_planet_luxuries_boost_zro_desc:0 "People in our empire are addicted to Spice, without it they feel increasing discomfort and maybe even death.\n\nCompletely §GNegates§! the §YHappiness§! §RPenalty§! and possibility of §Rdeath§! for §YSpice-addicted pops§!."
+planet_luxuries_boost_zro:0 "Spice Needs Fullfilled"
+planet_luxuries_boost_zro_desc:0 "People in our empire are addicted to Spice, without it they feel increasing discomfort and maybe even death.\n\nCompletely §GNegates§! the §YHappiness§! §RPenalty§! and possibility of §Rdeath§! for §YSpice-addicted pops!§!."
+#zro_provision_effect = "Completely §GNegates§! the §YHappiness§! §RPenalty§! and possibility of §Rdeath§! of §YWorm-marked pops!§! or §YZro-dependent pops!§!."
+
+planet_zro_worm_terraforming:0 "Sandtrout Terraforming"
+planet_zro_worm_terraforming_desc:0 "With our material support, we let Sandtrouts terraform this planet into a Desert World.\n\n§YTerraforms§! This world into a §GDesert World§! in §Y5§! Years, with a §YUnique Planetary Feature§!."
+decision_sandtrout_planting_terraform:0 "Begin Sandtrout Terraforming"
+decision_sandtrout_planting_terraform_desc:0 "With our revelation of the capabilities of the Sandworm's offspring, we are able to use the so called Sandtrout to cover terraformable planets with sand, turning them into a Desert world."
+zro_worm.terraform_tooltip:0 "§YTerraforms§! This world into a §GDesert World§! in §Y5§! Years, with a §YUnique Planetary Feature§!."
+
+planet_great_sandworm_terraforming:0 "Great Sandworm Terraforming"
+planet_great_sandworm.terraforming_tooltip: "With our material support, we let the Sandworm terraform this planet into a Desert World.\n\n§YTerraforms§! This world into a §GDesert World§! in §Y5§! Years, with a §YUnique Planetary Feature§! that allows productoin of §HSpice§!."
+zro_great_sandworm.terraform_tooltip:0 "§YTerraforms§! This world into a §GDesert World§! in §Y5§! Years, with a §YUnique Planetary Feature§! that allows productoin of §HSpice§!."
+
+d_zro_worm_colony:0 "Sandtrout Desert"
+d_zro_worm_colony_desc:0 "A section of this planet is used to grow Sandworm's offspring, these Sandtrouts will grow into Sandworm's after millenias. But for now they have fullfilled our terraforming needs."
+
+d_zro_great_sandworm:0 "Sandworm Desert"
+d_zro_great_sandworm_desc:0 "A section of this planet has been terraformed into an environment similar to that of Arrakis. It is now an environment suitable for the creation and harvesting of Spice."
+
+
+#great_sandworm_terraforming
+decision_great_sandworm_terraform:0 "Great Sandworm Desert"
+decision_great_sandworm_terraform_desc:0 "A section of this planet will been terraformed by the Great Sandworm and is now a similar environment to that of Arrakis. As such, it now has favorable conditions for the creation and harvesting of Spice."
+
+# TECHNOLOGIES
+
+tech_zro:0 "Access to Spice"
+tech_zro_desc:0 "Gain access to Spice via the Galactic Market"
+tech_zro_effect:0 "Gain access to Spice via the Galactic Market"
+
+tech_mine_zro_effect: "Allow the construction of Spice-harvesting buildings and space statoins"
+
+# SHIP COMPONENTS
+
+tech_zro_navigator_1: "Spice Navigator"
+tech_zro_navigator_1_desc: "The consumption of Spice has given certain individuals the ability to glimpse the future. Some individuals have managed to use that ability to see safe hyperspace routes, making ship navigation easier and faster."
+TECH_UNLOCK_ZRO_NAVIGATOR_1: "Spice Navigator"
+
+TECH_UNLOCK_ZRO_NAVIGATOR_1_TITLE: "Unlocks a §HSpice Navigator§! as a ship component."
+
+TECH_UNLOCK_ZRO_NAVIGATOR_1_DESC: "The consumption of Spice has given certain individuals the ability to glimpse the future. Some individuals have managed to use that ability to see safe hyperspace routes, making ship navigation easier and faster."
+
+tech_zro_navigator_2: "Spice Navigator: Stage 2"
+tech_zro_navigator_2_desc: "Consistent consumption of large quantities of the Spice has mutated the Navigators, but has also greatly enhanced their abilities, making them capable of folding space and allowing ships to move across the galaxy in mere days."
+TECH_UNLOCK_ZRO_NAVIGATOR_2: "Spice Navigator: Stage 2"
+
+TECH_UNLOCK_ZRO_NAVIGATOR_2_TITLE: "Unlocks a §HStage 2 Navigator§! as a ship component."
+
+TECH_UNLOCK_ZRO_NAVIGATOR_2_DESC: "Consistent consumption of large quantities of Spice has mutated the Navigators, but has also greatly enhanced their abilities, making them capable of folding space and allowing ships to move across great distances in mere days."
+
+tech_zro_navigator_3: "Spice Navigator: Stage 3"
+tech_zro_navigator_3_desc: "Consistently immersed in Spice, these navigators have fully mutated and resemble nothing of their original species. Their abilities allow them to easily find the fastest route, as well as fold space to move their ships across the entire galaxy."
+TECH_UNLOCK_ZRO_NAVIGATOR_3: "Spice Navigator: Stage 3"
+
+TECH_UNLOCK_ZRO_NAVIGATOR_3_TITLE: "Unlocks a §HStage 3 Navigator§! as a ship component."
+
+TECH_UNLOCK_ZRO_NAVIGATOR_3_DESC: "Consistently immersed in Spice, these navigators have fully mutated and resemble nothing of their original species. Their abilities allow them to easily find the fastest route, as well as fold space to move their ships across the entire galaxy."
+
+STAGE_1_ZRO_NAVIGATOR: "Spice Navigator"
+STAGE_1_ZRO_NAVIGATOR_DESC: "The consumption of Spice has given certain individuals the ability to glimpse the future. Some individuals have managed to use that ability to see safe hyperspace routes, making ship navigation easier and faster."
+
+STAGE_2_ZRO_NAVIGATOR: "Spice Navigator: Stage 2"
+STAGE_2_ZRO_NAVIGATOR_DESC: "Consistent consumption of large quantities of Spice has mutated the Navigators, but has also greatly enhanced their abilities, making them capable of folding space and allowing ships to move across great distances in mere days."
+
+STAGE_3_ZRO_NAVIGATOR: "Spice Navigator: Stage 3"
+STAGE_3_ZRO_NAVIGATOR_DESC: "Consistently immersed in Spice, these navigators have fully mutated and resemble nothing of their original species. Their abilities allow them to easily find the fastest route, as well as fold space to move their ships across the entire galaxy."
+
+# PRESCIENCE
+
+tech_prescience: "Prescience"
+tech_prescience_desc: "The psychic ability to see into both the past, present and future."
+tech_prescience_effect: "Gain §HPrescience§! as a potential trait for newely recruited leaders."
+TECH_UNLOCK_PRESCIENCE_TITLE: "Prescience"
+TECH_UNLOCK_PRESCIENCE_DESC: "Like, DEFINITELY prescience"
+TECH_UNLOCK_PRESCIENCE_DESC_TITLE: "Like, DEFINITELY prescience"
+
+trait_prescience: "Prescience"
+trait_prescience_desc: "This individual is able to see future events before they happen"
+leader_trait_scientist_prescience: "Prescience"
+leader_trait_scientist_prescience_desc: "This individual is able to see future events before they happen, and is using this ability to see the technological advancments of the future."
+leader_trait_general_prescience: "Prescience"
+leader_trait_general_prescience_desc: "This individual is able to see future events before they happen, and is using this ability to guide their troops to victory."
+leader_trait_admiral_prescience: "Prescience"
+leader_trait_admiral_prescience_desc: "This individual is able to see future events before they happen, and is using this ability to predict their opponent's every move."
+leader_trait_governor_prescience: "Prescience"
+leader_trait_governor_prescience_desc: "This individual is able to see future events before they happen, and is using this ability to govern their people the best they can."
+trait_ruler_prescience: "Prescience"
+trait_ruler_prescience_desc: "This individual is able to see future events before they happen, and is using this ability to help their people into a better future."
+
+#KWISATZ HADERACH
+
+leader_trait_scientist_terrible_prescience: "Kwisatz Haderach"
+leader_trait_scientist_terrible_prescience_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. But having used this power they have witnessed a terrible future, and will now do all they can to prevent it."
+leader_trait_general_terrible_prescience: "Kwisatz Haderach"
+leader_trait_general_terrible_prescience_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. But having used this power they have witnessed a terrible future, and will now do all they can to prevent it."
+leader_trait_admiral_terrible_prescience: "Kwisatz Haderach"
+leader_trait_admiral_terrible_prescience_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. But having used this power they have witnessed a terrible future, and will now do all they can to prevent it."
+leader_trait_governor_terrible_prescience: "Kwisatz Haderach"
+leader_trait_governor_terrible_prescience_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. But having used this power they have witnessed a terrible future, and will now do all they can to prevent it."
+trait_ruler_terrible_prescience: "Kwisatz Haderach"
+trait_ruler_terrible_prescience_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. But having used this power they have witnessed a terrible future, and will now do all they can to prevent it."
+
+leader_trait_scientist_kwisatz_haderach: "Kwisatz Haderach"
+leader_trait_scientist_kwisatz_haderach_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. They use this power to help their people into a better future."
+leader_trait_general_kwisatz_haderach: "Kwisatz Haderach"
+leader_trait_general_kwisatz_haderach_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. They use this power to help their people into a better future."
+leader_trait_admiral_kwisatz_haderach: "Kwisatz Haderach"
+leader_trait_admiral_kwisatz_haderach_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. They use this power to help their people into a better future."
+leader_trait_governor_kwisatz_haderach: "Kwisatz Haderach"
+leader_trait_governor_kwisatz_haderach_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. They use this power to help their people into a better future."
+trait_ruler_kwisatz_haderach: "Kwisatz Haderach"
+trait_ruler_kwisatz_haderach_desc: "This individual has become the §HKwisatz Haderach§!. They are capable of bridging space and time, and through it they see all that was, all that is, and all that is yet to be. They use this power to help their people into a better future."
+
+# MENTATS
+
+tech_mentat: "Mentats"
+tech_mentat_desc: "The ability to manipulate the species genetically allows us to produce and train individuals as smart and powerful in their logical computatoins as AI."
+tech_mentat_effect: "Gain §HMentat§! as a potential trait for newely recruited leaders."
+TECH_UNLOCK_MENTAT_TITLE: "Mentats"
+TECH_UNLOCK_MENTAT_DESC: "The ability to manipulate the species genetically allows us to produce and train individuals as smart and powerful in their logical computatoins as AI."
+
+leader_trait_scientist_mentat: "Mentat"
+leader_trait_scientist_mentat_desc: "This individual is a biological computer, just as good as artificial AI. Their mathematical and logical conclusions are hard to deny, and their computational skill and knowledge are extremely valuable in their field."
+leader_trait_general_mentat: "Mentat"
+leader_trait_general_mentat_desc: "This individual is a biological computer, just as good as artificial AI. Their mathematical and logical conclusions are hard to deny, and their computational skill and knowledge are extremely valuable in their field."
+leader_trait_admiral_mentat: "Mentat"
+leader_trait_admiral_mentat_desc: "This individual is a biological computer, just as good as artificial AI. Their mathematical and logical conclusions are hard to deny, and their computational skill and knowledge are extremely valuable in their field."
+leader_trait_governor_mentat: "Mentat"
+leader_trait_governor_mentat_desc: "This individual is a biological computer, just as good as artificial AI. Their mathematical and logical conclusions are hard to deny, and their computational skill and knowledge are extremely valuable in their field."
+trait_ruler_mentat: "Mentat"
+trait_ruler_mentat_desc: "This individual is a biological computer, just as good as artificial AI. Their mathematical and logical conclusions are hard to deny, and their computational skill and knowledge are extremely valuable in their field."
+
+# ARMIES
+
+tech_fedaykin_army: "Fedaykin"
+tech_fedaykin_army_desc: "This army is composed of people who have been to and became attuned to survival in the dangerous deserts of Arrakis, and have thus become the best survivors and warriors in the galaxy."
+
+fedaykin_army: "Fedaykin"
+fedaykin_army_desc: "This army is composed of people who have been to and became attuned to survival in the dangerous deserts of Arrakis, and have thus become the best survivors and warriors in the galaxy."
+
+primitive_fedaykin_army: "Primitive Fedaykin"
+primitive_army_desc: "This army is composed of the people who have come to call themselves Fremen - attuned to survival in a dangerous deserts of Arrakis, they have become the best warriors in the galaxy."
+
+#EVENT
+arrakis_digsite: "Shifting Sands of Arrakis"
+zro_worm_1_digsite.desc: "The scientist team exploring Arrakis has noticed a strange phenomenon: occasionally the sands in the desert tend to shift, changing the landscape, for no apparent reason. Evidently it has nothing to do with the wind or storms, but a faint seismic activity unrelated to natural planetary accurances was detected..."
+
+#Remember to write the Archaeology site that makes the players discover that these Sandtrout are the remains of Leto II after he died galaxies before and the Sandworm refers to that due to being his dreamings.
+
+zro_worm.6:0 "[From.GetName] Ingrained with Sand"
+zro_worm.6.desc:0 "The Ssandworm we released on [From.GetName] has covered some of the planet's surface in a layer of sand. Thanks to our manipulation of their growth, this eon long process took only five years. [From.GetName] has been completely desertified and ready for colonisation, and it is now a viable planet for the production of Spice."
+
+#zro_worm.2.name: "Very special Spice event"
+#zro_worm.2.desc: "Might give your pops Spice traits"
+
+NAME_Arrakis_Dune: "Arrakis"
+
+# ENCLAVES
+FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_HEADER:1 "Convert into Spacing Guild Enclave"
+FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_DESCRIPTION:0 "$FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_CLICK$"
+FLEET_VIEW_TURN_INTO_MERCENARY_ENCLAVE_CLICK:2 "This converts this fleet into a §YSpacing Guild Enclave.§! §RWe will lose control of the fleet.§!"

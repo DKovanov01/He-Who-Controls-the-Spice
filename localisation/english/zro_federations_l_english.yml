@@ -1,0 +1,8 @@
+﻿l_english:
+ resolution_galacticstudies_extradimensional_experimentation_tooltip:0 "Unlocks a planetary decision that consumes £sr_zro£ Spice to fund extradimensional research at Advanced Research Complexes."
+ pm_extradimensional_experimentation_tooltip:0 "§Y$building_research_lab_3$§!:\n+1£sr_zro£ Spice upkeep\n+1£job_researcher£ $job_dimensional_portal_researcher$"
+
+ fedel.501.2:0 "To bolster the powers of our own psionic champions, we could tap into our Spice supply. It will give us an additional advantage in the battle."
+ fedel.501.d:0 "No Spice. We shall win without it."
+ 
+ challenge_type_psionic_battle_desc:0 "The matter of who should be leading our federation is too important to be decided within the mundane limits of our corporeal realm. Each empire will send their most powerful psychics to face off against one another in a titanic battle that will momentarily rend the very fabric of reality.\n\n§YVictory will depend on:\n- The number of Pops with psionic traits\n- The number of Pops with the Telepath job\n- Spice offerings§!\n\n§REmpires without psionic Pops cannot participate and must forfeit.§!"

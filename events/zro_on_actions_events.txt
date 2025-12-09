@@ -1,0 +1,172 @@
+############################
+#
+# Pop Events
+#
+# Original written by Henrik Thyrwall
+#
+# Modified by Mr_Jessy
+#
+############################
+
+################
+# GIVES A FEW POPS: EITHER ONE TRAIT OR THE OTHER #
+################
+
+namespace = zro_worm
+
+planet_event = {
+	id = zro_worm.17
+#	title = "zro_worm.17.name"
+#	desc = "zro_worm.17.desc"
+#	picture = GFX_evt_cold_barren
+#	show_sound = event_scanner
+	is_triggered_only = yes
+	location = from
+	hide_window = yes
+
+
+	#pre_triggers = { 
+	#	has_owner = no
+	#}
+
+	#trigger = {
+	#	has_planet_flag = zro_worm_terraforming_flag
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+
+	immediate = {
+	remove_planet_flag = great_sandworm_terraforming_flag
+	remove_modifier = great_sandworm_terraforming
+	#owner = { country_event = { id = zro_worm.4 days = -1 } }
+	if = {
+	 		limit = {
+	 		NOT = { is_planet_class = pc_desert }
+	 		}
+	change_pc = pc_desert
+	reset_planet = yes
+	fire_on_action = { on_action = on_terraforming_complete }
+	}
+	add_deposit = d_zro_great_sandworm
+	}
+}
+
+country_event = {
+	id = zro_worm.13
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			OR = {
+				has_ruler_trait = leader_trait_ruler_prescience
+			}
+			NOR = {
+				has_trait = leader_trait_admiral_prescience
+				has_trait = leader_trait_general_prescience
+				has_trait = leader_trait_governor_prescience
+				has_trait = leader_trait_scientist_prescience
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_prescience
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_prescience
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_prescience
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_prescience
+				break = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = zro_worm.12
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			OR = {
+				has_trait = leader_trait_admiral_mentat
+				has_trait = leader_trait_general_mentat
+				has_trait = leader_trait_governor_mentat
+				has_trait = leader_trait_scientist_mentat
+			}
+			NOT = {
+			    has_ruler_trait = trait_ruler_mentat
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+				limit = { leader_class = ruler }
+				add_trait = trait_ruler_mentat
+				break = yes
+		}
+	}
+}
+
+country_event = {
+	id = zro_worm.14
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			OR = {
+				has_ruler_trait = leader_trait_ruler_mentat
+			}
+			NOR = {
+				has_trait = leader_trait_admiral_mentat
+				has_trait = leader_trait_general_mentat
+				has_trait = leader_trait_governor_mentat
+				has_trait = leader_trait_scientist_mentat
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_mentat
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_mentat
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_mentat
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_mentat
+				break = yes
+			}
+		}
+	}
+}

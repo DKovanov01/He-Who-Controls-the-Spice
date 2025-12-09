@@ -1,0 +1,3 @@
+# Zro/Spice Requisitorium
+@requisitorium_zro_reduction = -1
+@requisitorium_zro_overlord = 1

@@ -1,0 +1,733 @@
+
+namespace = imperial_tax
+
+country_event = {
+	id =  imperial_tax.1
+
+	is_triggered_only = yes
+	
+	hide_window = yes
+
+	trigger = {
+		has_galactic_emperor = yes
+		is_galactic_emperor = no
+		is_galactic_community_member = yes
+	}
+
+	immediate = {
+		country_event = {
+			id = imperial_tax.2
+			days = 20
+		}
+	}
+}
+
+country_event = {
+	id = imperial_tax.2
+
+	is_triggered_only = yes
+	
+	hide_window = yes
+
+	immediate = {
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = food
+			}
+			variable = country_food
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = minerals
+			}
+			variable = country_minerals
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = energy
+			}
+			variable = country_energy
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = consumer_goods
+			}
+			variable = country_consumer_goods
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = alloys
+			}
+			variable = country_alloys
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = volatile_motes
+			}
+			variable = country_motes
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = exotic_gases
+			}
+			variable = country_gases
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = rare_crystals
+			}
+			variable = country_crystals
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = sr_living_metal
+			}
+			variable = country_living_metal
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = sr_zro
+			}
+			variable = country_zro
+		}
+		export_trigger_value_to_variable = {
+			trigger = resource_revenue_compare
+			parameters = {
+				resource = sr_dark_matter
+			}
+			variable = country_dark_matter
+		}
+		random_playable_country = {
+			limit = { is_galactic_emperor = yes }
+			save_event_target_as = gal_emperor
+			change_variable = {
+				which = galaxy_food
+				value = root.country_food
+			}
+			change_variable = {
+				which = galaxy_minerals
+				value = root.country_minerals
+			}
+			change_variable = {
+				which = galaxy_energy
+				value = root.country_energy
+			}
+			change_variable = {
+				which = galaxy_consumer_goods
+				value = root.country_consumer_goods
+			}
+			change_variable = {
+				which = galaxy_alloys
+				value = root.country_alloys
+			}
+			change_variable = {
+				which = galaxy_motes
+				value = root.country_motes
+			}
+			change_variable = {
+				which = galaxy_gases
+				value = root.country_gases
+			}
+			change_variable = {
+				which = galaxy_crystals
+				value = root.country_crystals
+			}
+			change_variable = {
+				which = galaxy_living_metal
+				value = root.country_living_metal
+			}
+			change_variable = {
+				which = galaxy_zro
+				value = root.country_zro
+			}
+			change_variable = {
+				which = galaxy_dark_matter
+				value = root.country_dark_matter
+			}
+		}
+		#log = "[Root.GetName]Taxed,count galaxy energy is [gal_emperor.galaxy_energy]"
+	}
+}
+
+country_event = {
+	id = imperial_tax.3
+
+	is_triggered_only = yes
+	
+	hide_window = yes
+
+	trigger = {
+		is_galactic_emperor = yes
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					is_active_resolution = resolution_emperor_food_1
+					is_active_resolution = resolution_emperor_food_2
+					is_active_resolution = resolution_emperor_food_3
+					is_active_resolution = resolution_emperor_food_4
+					is_active_resolution = resolution_emperor_food_5
+				}
+			}
+			set_tax_resolutions = yes
+		}
+		if = {
+			limit = {
+				NOR = {
+					is_active_resolution = resolution_emperor_volatile_motes_1
+					is_active_resolution = resolution_emperor_volatile_motes_2
+					is_active_resolution = resolution_emperor_volatile_motes_3
+					is_active_resolution = resolution_emperor_volatile_motes_4
+					is_active_resolution = resolution_emperor_volatile_motes_5
+				}
+			}
+			set_advanced_tax_resolutions = yes
+		}
+		remove_modifier = food_tax
+		remove_modifier = minerals_tax
+		remove_modifier = energy_tax
+		remove_modifier = consumer_goods_tax
+		remove_modifier = alloys_tax
+		remove_modifier = motes_tax
+		remove_modifier = gases_tax
+		remove_modifier = crystals_tax
+		remove_modifier = living_metal_tax
+		remove_modifier = zro_tax
+		remove_modifier = dark_matter_tax
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_food_2 }
+			divide_variable = {
+				which = galaxy_food
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_food_3 }
+			divide_variable = {
+				which = galaxy_food
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_food_4 }
+			divide_variable = {
+				which = galaxy_food
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_food_5 }
+			divide_variable = {
+				which = galaxy_food
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_minerals_2 }
+			divide_variable = {
+				which = galaxy_minerals
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_minerals_3 }
+			divide_variable = {
+				which = galaxy_minerals
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_minerals_4 }
+			divide_variable = {
+				which = galaxy_minerals
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_minerals_5 }
+			divide_variable = {
+				which = galaxy_minerals
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_energy_2 }
+			divide_variable = {
+				which = galaxy_energy
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_energy_3 }
+			divide_variable = {
+				which = galaxy_energy
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_energy_4 }
+			divide_variable = {
+				which = galaxy_energy
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_energy_5 }
+			divide_variable = {
+				which = galaxy_energy
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_consumer_goods_2 }
+			divide_variable = {
+				which = galaxy_consumer_goods
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_consumer_goods_3 }
+			divide_variable = {
+				which = galaxy_consumer_goods
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_consumer_goods_4 }
+			divide_variable = {
+				which = galaxy_consumer_goods
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_consumer_goods_5 }
+			divide_variable = {
+				which = galaxy_consumer_goods
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_alloys_2 }
+			divide_variable = {
+				which = galaxy_alloys
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_alloys_3 }
+			divide_variable = {
+				which = galaxy_alloys
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_alloys_4 }
+			divide_variable = {
+				which = galaxy_alloys
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_alloys_5 }
+			divide_variable = {
+				which = galaxy_alloys
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_volatile_motes_2 }
+			divide_variable = {
+				which = galaxy_motes
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_volatile_motes_3 }
+			divide_variable = {
+				which = galaxy_motes
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_volatile_motes_4 }
+			divide_variable = {
+				which = galaxy_motes
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_volatile_motes_5 }
+			divide_variable = {
+				which = galaxy_motes
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_exotic_gases_2 }
+			divide_variable = {
+				which = galaxy_gases
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_exotic_gases_3 }
+			divide_variable = {
+				which = galaxy_gases
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_exotic_gases_4 }
+			divide_variable = {
+				which = galaxy_gases
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_exotic_gases_5 }
+			divide_variable = {
+				which = galaxy_gases
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_rare_crystals_2 }
+			divide_variable = {
+				which = galaxy_crystals
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_rare_crystals_3 }
+			divide_variable = {
+				which = galaxy_crystals
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_rare_crystals_4 }
+			divide_variable = {
+				which = galaxy_crystals
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_rare_crystals_5 }
+			divide_variable = {
+				which = galaxy_crystals
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_living_metal_2 }
+			divide_variable = {
+				which = galaxy_living_metal
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_living_metal_3 }
+			divide_variable = {
+				which = galaxy_living_metal
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_living_metal_4 }
+			divide_variable = {
+				which = galaxy_living_metal
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_living_metal_5 }
+			divide_variable = {
+				which = galaxy_living_metal
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_zro_2 }
+			divide_variable = {
+				which = galaxy_zro
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_zro_3 }
+			divide_variable = {
+				which = galaxy_zro
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_zro_4 }
+			divide_variable = {
+				which = galaxy_zro
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_zro_5 }
+			divide_variable = {
+				which = galaxy_zro
+				value = 3
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_dark_matter_2 }
+			divide_variable = {
+				which = galaxy_dark_matter
+				value = 39
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_dark_matter_3 }
+			divide_variable = {
+				which = galaxy_dark_matter
+				value = 9
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_dark_matter_4 }
+			divide_variable = {
+				which = galaxy_dark_matter
+				value = 5.667
+			}
+		}
+		if = { 
+			limit = { is_active_resolution = resolution_emperor_sr_dark_matter_5 }
+			divide_variable = {
+				which = galaxy_dark_matter
+				value = 3
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_food_2
+					is_active_resolution = resolution_emperor_food_3
+					is_active_resolution = resolution_emperor_food_4
+					is_active_resolution = resolution_emperor_food_5
+				}
+			}
+			add_modifier = {
+				modifier = food_tax
+				multiplier = galaxy_food
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_minerals_2
+					is_active_resolution = resolution_emperor_minerals_3
+					is_active_resolution = resolution_emperor_minerals_4
+					is_active_resolution = resolution_emperor_minerals_5
+				}
+			}
+			add_modifier = {
+				modifier = minerals_tax
+				multiplier = galaxy_minerals
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_energy_2
+					is_active_resolution = resolution_emperor_energy_3
+					is_active_resolution = resolution_emperor_energy_4
+					is_active_resolution = resolution_emperor_energy_5
+				}
+			}
+			add_modifier = {
+				modifier = energy_tax
+				multiplier = galaxy_energy
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_consumer_goods_2
+					is_active_resolution = resolution_emperor_consumer_goods_3
+					is_active_resolution = resolution_emperor_consumer_goods_4
+					is_active_resolution = resolution_emperor_consumer_goods_5
+				}
+			}
+			add_modifier = {
+				modifier = consumer_goods_tax
+				multiplier = galaxy_consumer_goods
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_alloys_2
+					is_active_resolution = resolution_emperor_alloys_3
+					is_active_resolution = resolution_emperor_alloys_4
+					is_active_resolution = resolution_emperor_alloys_5
+				}
+			}
+			add_modifier = {
+				modifier = alloys_tax
+				multiplier = galaxy_alloys
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_volatile_motes_2
+					is_active_resolution = resolution_emperor_volatile_motes_3
+					is_active_resolution = resolution_emperor_volatile_motes_4
+					is_active_resolution = resolution_emperor_volatile_motes_5
+				}
+			}
+			add_modifier = {
+				modifier = motes_tax
+				multiplier = galaxy_motes
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_exotic_gases_2
+					is_active_resolution = resolution_emperor_exotic_gases_3
+					is_active_resolution = resolution_emperor_exotic_gases_4
+					is_active_resolution = resolution_emperor_exotic_gases_5
+				}
+			}
+			add_modifier = {
+				modifier = gases_tax
+				multiplier = galaxy_gases
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_rare_crystals_2
+					is_active_resolution = resolution_emperor_rare_crystals_3
+					is_active_resolution = resolution_emperor_rare_crystals_4
+					is_active_resolution = resolution_emperor_rare_crystals_5
+				}
+			}
+			add_modifier = {
+				modifier = crystals_tax
+				multiplier = galaxy_crystals
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_sr_living_metal_2
+					is_active_resolution = resolution_emperor_sr_living_metal_3
+					is_active_resolution = resolution_emperor_sr_living_metal_4
+					is_active_resolution = resolution_emperor_sr_living_metal_5
+				}
+			}
+			add_modifier = {
+				modifier = living_metal_tax
+				multiplier = galaxy_living_metal
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_sr_zro_2
+					is_active_resolution = resolution_emperor_sr_zro_3
+					is_active_resolution = resolution_emperor_sr_zro_4
+					is_active_resolution = resolution_emperor_sr_zro_5
+				}
+			}
+			add_modifier = {
+				modifier = zro_tax
+				multiplier = galaxy_zro
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_active_resolution = resolution_emperor_sr_dark_matter_2
+					is_active_resolution = resolution_emperor_sr_dark_matter_3
+					is_active_resolution = resolution_emperor_sr_dark_matter_4
+					is_active_resolution = resolution_emperor_sr_dark_matter_5
+				}
+			}
+			add_modifier = {
+				modifier = dark_matter_tax
+				multiplier = galaxy_dark_matter
+			}
+		}
+		
+		country_event = {
+			id = imperial_tax.4
+			days = 10
+		}
+	}
+}
+
+country_event = {
+	id = imperial_tax.4
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_variable = {
+			which = galaxy_food
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_minerals
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_energy
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_consumer_goods
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_alloys
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_motes
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_gases
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_crystals
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_living_metal
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_zro
+			value = 0
+		}
+		set_variable = {
+			which = galaxy_dark_matter
+			value = 0
+		}
+		#log = "Tax Cleaned."
+	}
+}

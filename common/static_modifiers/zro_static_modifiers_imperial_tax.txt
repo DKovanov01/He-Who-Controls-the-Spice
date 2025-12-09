@@ -1,0 +1,23 @@
+zro_tax = {
+	country_galactic_standard_sr_zro_produces_add = 1
+}
+
+sr_zro_tax_2 = {
+	country_sr_zro_produces_mult = 0.025
+	hide_from_country_list = yes
+}
+
+sr_zro_tax_3 = {
+	country_sr_zro_produces_mult = 0.1
+	hide_from_country_list = yes
+}
+
+sr_zro_tax_4 = {
+	country_sr_zro_produces_mult = 0.15
+	hide_from_country_list = yes
+}
+
+sr_zro_tax_5 = {
+	country_sr_zro_produces_mult = 0.25
+	hide_from_country_list = yes
+}

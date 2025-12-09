@@ -1,0 +1,30 @@
+#First is set to default
+#
+
+emperor_conversion =
+{
+	potential = {
+		has_policy_flag = trade_conversion_emperor
+	}
+
+	weight = {
+		weight = 100
+	}
+
+	conversion_rate = {
+		energy = 1
+		minerals = 0.5
+		foods = 0.5
+		consumer_goods = 0.25
+		alloys = 0.125
+		unity = 0.1
+		physics_research = 0.1
+		society_research = 0.1
+		engineering_research = 0.1
+		exotic_gases = 0.05
+		rare_crystals = 0.05
+		volatile_motes = 0.05
+	}
+
+	economic_category = trade_routes
+}

@@ -1,0 +1,30 @@
+on_game_start_country = {
+	events = {
+	zro_worm.1
+	}
+}
+
+# Executed as new ruler has been set
+# This = Country
+on_ruler_set = {
+	events = {
+		action.47	# Remove election-filler leaders when ruler is set
+		mandate.1	# "ruler X elected, check situation log for their mandate"=
+		zro_worm.11 # elected leader gets Prescience trait if they had it previously
+		zro_worm.12 # elected leader gets Mentat trait if they had it previously
+	}
+}
+
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		zro_worm.13	# leader gets Prescience trait for their normal leader class
+		zro_worm.14  # leader gets Mentat trait for their normal leader class
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		imperial_tax.1
+		imperial_tax.3
+	}
+}

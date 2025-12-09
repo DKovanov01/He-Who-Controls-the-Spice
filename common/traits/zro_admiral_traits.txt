@@ -1,0 +1,131 @@
+# species_potential_add = {}
+# show the trait to add to species when genemodding or randomizing traits.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+# species_possible_remove = {}
+# allow to remove the trait when genemodding.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+#Prescience Admiral Trait
+leader_trait_admiral_prescience = {
+	cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/trait_prescience.dds"
+	self_modifier = {
+	    
+		leader_exp_gain_mult = 0.25
+		admiral_skill_levels = 2
+	}
+	modifier = {
+		ship_speed_mult = 0.20
+		ship_evasion_mult = 0.15
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+		ship_disengage_chance_mult = +0.25
+		ship_emergency_ftl_mult = -0.15
+	}
+
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	prerequisites = { tech_prescience }
+	opposites = { "leader_trait_admiral_cyborg" "leader_trait_admiral_synthetic" "leader_trait_admiral_terrible_prescience" "leader_trait_admiral_kwisatz_haderach" }
+
+	ai_weight = {
+		weight = 300
+	}
+}
+
+#Mentat Admiral Trait
+leader_trait_admiral_mentat = {
+	cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/trait_mentat.dds"
+	self_modifier = {
+		leader_exp_gain_mult = 0.50
+		admiral_skill_levels = 3
+	}
+	modifier = {
+		ship_disengage_chance_mult = +0.25
+		ship_emergency_ftl_mult = -0.15
+		ships_upkeep_mult = -0.20
+		ship_weapon_range_mult = 0.20
+		ship_hull_mult = 0.10
+		ship_weapon_damage = 0.10
+		ship_fire_rate_mult = 0.35
+	}
+
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	prerequisites = { tech_mentat }
+	opposites = { "leader_trait_admiral_cyborg" "leader_trait_admiral_synthetic" }
+
+	ai_weight = {
+		weight = 300
+	}
+}
+
+################################
+
+#Terrible prescient visions
+#leader_trait_admiral_terrible_prescience = {
+#	cost = 1
+ #   icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
+#	self_modifier = {
+#	    
+#		leader_exp_gain_mult = -0.25
+#		admiral_skill_levels = -2
+#		leaders_upkeep_mult = 1
+#	}
+#	modifier = {
+#		ship_speed_mult = -0.50
+#		ship_evasion_mult = -0.50
+#		ship_sensor_range_add = -3
+#		ship_hyperlane_range_add = -5
+#		ship_disengage_chance_mult = -0.75
+#		ship_emergency_ftl_mult = +0.50
+#		ship_weapon_range_mult = -0.50
+#		ship_weapon_damage = -0.50
+#		ship_fire_rate_mult = -0.50
+#	}
+#
+#	leader_trait = { admiral }
+#	leader_class = { admiral }
+#	prerequisites = { tech_prescience }
+#	opposites = { "leader_trait_admiral_cyborg" "leader_trait_admiral_synthetic" "leader_trait_admiral_prescience" "leader_trait_admiral_kwisatz_haderach" }
+#
+#	ai_weight = {
+#		weight = 0
+#	}
+#}
+
+#Kwisatz Haderach Admiral Trait
+#leader_trait_admiral_kwisatz_haderach = {
+#	cost = 1
+ #   icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
+#	self_modifier = {
+ #      
+#		leader_exp_gain_mult = 1
+#		admiral_skill_levels = 5
+#		leaders_upkeep_mult = -0.50
+#	    }
+#	modifier = {
+ #       ship_speed_mult = 0.50
+#		ship_evasion_mult = 0.50
+#		ship_sensor_range_add = 3
+#		ship_hyperlane_range_add = 5
+#		ship_disengage_chance_mult = +0.75
+#		ship_emergency_ftl_mult = -0.50
+#		ship_weapon_range_mult = 0.50
+#		ship_weapon_damage = 0.50
+#		ship_fire_rate_mult = 0.50
+#	}
+#
+#	leader_trait = { admiral }
+#	leader_class = { admiral }
+#	prerequisites = { tech_prescience }
+#	opposites = { "leader_trait_admiral_cyborg" "leader_trait_admiral_synthetic" "leader_trait_admiral_prescience" "leader_trait_admiral_terrible_prescience" }
+#
+#	ai_weight = {
+#		weight = 0
+#	}
+#}
